@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 // import { Tilt } from "react-tilt";
 
-import { styles } from "../styles";
+import { styles } from "../globalStyles/styles";
 import { staggerContainer } from "../utils/motion";
 
 const SectionWrapper = (Component, idName = "") => {
