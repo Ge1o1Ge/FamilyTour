@@ -1,18 +1,20 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 
-import {
-  ExcursWrapped,
-  HeroWrapped,
-  Navbar,
-} from "./components";
+import { Excurs, Hero, Header } from './components';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        <Navbar />
-        <HeroWrapped />
-        <ExcursWrapped />
+      <div className="main">
+        <div className="header__background">
+          <span className="header__background__left"></span>
+          <span className="header__background__right"></span>
+          <Header />
+        </div>
+        <div className="hero__background">
+          <Hero />
+        </div>
+        <Excurs />
       </div>
     </BrowserRouter>
   );

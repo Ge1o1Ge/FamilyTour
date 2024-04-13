@@ -20,7 +20,7 @@ const SectionWrapper = <P extends object>(
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+        className='section'
       >
         {idName && <span className="hash-span" id={idName}>&nbsp;</span>}
         <WrappedComponent {...rest as P} />

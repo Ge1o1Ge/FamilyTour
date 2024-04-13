@@ -1,9 +1,9 @@
-import HeroWrapped from './Hero';
-import Navbar from './Navbar';
-import ExcursWrapped from './Excurs';
+import Hero from './Hero';
+import Header from './Header';
+import Excurs from './Excurs';
 
 export {
-  HeroWrapped,
-  Navbar,
-  ExcursWrapped,
+  Hero,
+  Header,
+  Excurs,
 }

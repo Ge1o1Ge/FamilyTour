@@ -2,9 +2,9 @@ import { SectionWrapper } from "../hoc";
 
 const Hero = () => {
   return (
-    <section className="">
-      <div className="text-white mt-[100px] ">
-        <h2 className="text-[18px]">HERO</h2>
+    <section className="hero">
+      <div className="">
+        <h2 className="">HERO</h2>
       </div>
     </section>
   );
