@@ -1,7 +1,6 @@
 import React, { ComponentType } from "react";
 import { motion, Variants } from "framer-motion";
 import { staggerContainer } from "../utils/motion";
-import { styles } from "../globalStyles/styles";
 
 interface SectionWrapperProps {
   idName?: string;
@@ -9,7 +8,7 @@ interface SectionWrapperProps {
 
 const SectionWrapper = <P extends object>(
   WrappedComponent: ComponentType<P>,
-  idName: string = ""
+  idSeclector: string = ""
 ) => {
   const variants: Variants = staggerContainer();
 
@@ -20,9 +19,9 @@ const SectionWrapper = <P extends object>(
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: true, amount: 0.25 }}
-        className='section'
+        className={`section ${idSeclector}`}
       >
-        {idName && <span className="hash-span" id={idName}>&nbsp;</span>}
+        {idSeclector && <span className="hash-span" id={idSeclector}>&nbsp;</span>}
         <WrappedComponent {...rest as P} />
       </motion.section>
     );

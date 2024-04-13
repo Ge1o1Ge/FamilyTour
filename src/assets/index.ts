@@ -4,6 +4,7 @@ import tgIcon from "./tg-icon.svg";
 import vkIcon from "./vk-icon.svg";
 import waIcon from "./wa-icon.svg";
 import phoneIcon from "./phone-icon.svg";
+import slide1 from "./slider/sochi.png";
 
 export {
   logo,
@@ -12,3 +13,7 @@ export {
   waIcon,
   phoneIcon
 };
+
+export const slides = {
+  slide1
+}

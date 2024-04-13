@@ -84,7 +84,7 @@
 
   &__phone {
     position: relative;
-    padding: 15px 20px;
+    padding: 15px 0px 15px 20px;
     border-radius: 15px;
     width: 25vw;
     display: flex;
@@ -127,5 +127,137 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+  }
+
+  &__nav {
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    color: $textLight;
+    width: min(1280px, 100%);
+    @extend %title-font;
+  }
+
+  &__nav__link {
+    color: $textLight;
+    text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    @extend %title-font;
+  }
+
+  &__nav__link + .hero__nav__link {
+    padding-left: 15px;
+  }
+
+  &__box {
+    margin-top: 80px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__slider {
+    max-width: 40vw;
+  }
+
+  &__slider__box {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  &__slider__img {
+    height: 50vh;
+    max-width: 35vw;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 0 2.5vw;
+  }
+
+  &__slider__controller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__slider__button {
+    display: block;
+    margin: 0 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: none;
+    background-color: $buttons;
+  }
+
+  &__slider__button:active {
+    background-color: $buttonsP;
+  }
+
+  &__slider__dotes {
+    display: flex;
+    align-items: center;
+  }
+
+  &__slider__dote {
+    display: block;
+    position: relative;
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+  }
+
+  &__slider__dote::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $bgSpan;
+    border-radius: 50%;
+  }
+
+  &__slider__dote--active::before {
+    background-color: $textLight;
+  }
+
+  &__section {
+    width: 100%;
+  }
+
+  &__namer {
+    margin-left: 40px;
+    margin-bottom: 65px;
+  }
+
+  &__namer__header {
+    width: 40vw;
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    font-size: 7vh;
+  }
+
+  &__namer__line {
+    position: relative;
+    background-color: $bgSpan;
+  }
+
+  &__namer__line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45vw;
+    height: 15px;
+    background-color: $bgSpan;
+    z-index: 2;
+  }
+
+  &__slide__carousel {
+    width: 50vw;
   }
 }

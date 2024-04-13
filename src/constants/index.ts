@@ -21,9 +21,29 @@ export const socialLinks = [
   },
 ];
 
-export const MenuLinks = [
+export const menuLinks = [
   {
-    name: '',
+    name: 'Экскурсии',
     link: '',
   },
+  {
+    name: 'VIP-Туры',
+    link: '',
+  },
+  {
+    name: 'Море',
+    link: '',
+  },
+  {
+    name: 'Отели',
+    link: '',
+  },
+  {
+    name: 'Трансфер',
+    link: '',
+  },
+  {
+    name: 'Контакты',
+    link: '',
+  }
 ];
