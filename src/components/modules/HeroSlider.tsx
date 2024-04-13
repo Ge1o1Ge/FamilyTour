@@ -34,21 +34,23 @@ const MainSlider = ({ images }: { images: string[] }) => {
   };
 
   return (
-    <div
-      className="hero__slider"
-      style={{ position: 'relative', overflow: 'hidden' }}
-    >
-      <Slider ref={sliderRef} {...settings}>
-        {images.map((image, index) => (
-          <div className="hero__slider__box" key={index}>
-            <img
-              src={image}
-              alt={`Slide ${index}`}
-              className="hero__slider__img"
-            />
-          </div>
-        ))}
-      </Slider>
+    <>
+      <div
+        className="hero__slider"
+        style={{ position: 'relative', overflow: 'hidden' }}
+      >
+        <Slider ref={sliderRef} {...settings}>
+          {images.map((image, index) => (
+            <div className="hero__slider__box" key={index}>
+              <img
+                src={image}
+                alt={`Slide ${index}`}
+                className="hero__slider__img"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
       <div className="hero__slider__controller">
         <button
           className="hero__slider__button hero__slider__button__left"
@@ -71,7 +73,7 @@ const MainSlider = ({ images }: { images: string[] }) => {
           {`>`}
         </button>
       </div>
-    </div>
+    </>
   );
 };
 
