@@ -1,14 +1,27 @@
-import { SectionWrapper } from "../hoc";
+import { CardInterface } from '../../types';
+import { excursCardsInfo } from '../constants';
+import { SectionWrapper } from '../hoc';
+import CardsSlider from './modules/CardsSlider';
 
 const Excurs = () => {
   return (
-    <section className="">
-      <div className="text-white mt-[100px] ">
-        <h2 className="text-[18px]">HERO</h2>
+    <div className="excurs">
+      <div className="excurs__description">
+        <h2 className="excurs__title">Экскурсии</h2>
+        <p className="excurs__text">
+          Откройте для себя магию Черноморского побережья в увлекательных
+          экскурсиях! Погрузитесь в красоту местных пейзажей, исторических
+          достопримечательностей и неповторимой атмосферы. Насладитесь комфортом
+          и интересными впечатлениями вместе с нами!
+        </p>
+        <p className="excurs__text excurs__tags">#ОтпускМечты #Черное_Море </p>
       </div>
-    </section>
+      <div className="excurs__box">
+        <CardsSlider cards={excursCardsInfo as CardInterface[]} styleName='excurs'/>
+      </div>
+    </div>
   );
 };
 
-const ExcursWrapped = SectionWrapper(Excurs, "excurs");
+const ExcursWrapped = SectionWrapper(Excurs, 'excurs', false);
 export default ExcursWrapped;

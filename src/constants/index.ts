@@ -1,4 +1,4 @@
-import { tgIcon, vkIcon, waIcon } from '../assets';
+import { redFlat, tgIcon, vkIcon, waIcon } from '../assets';
 
 export const socialLinks = [
   {
@@ -46,4 +46,87 @@ export const menuLinks = [
     name: 'Контакты',
     link: '',
   }
+];
+
+export const excursCardsInfo = [
+  {
+    id: 0,
+    name: 'Красная поляна',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: true,
+    isNew: true,
+    startPrice: '500р',
+  },
+  {
+    id: 2,
+    name: 'Красная поляна',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: true,
+    startPrice: '500р',
+  },
+  {
+    id: 3,
+    name: 'Красная поляна',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: true,
+    isNew: false,
+    startPrice: '500р',
+  },
+  {
+    id: 4,
+    name: 'Красная поляна',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: false,
+    startPrice: '500р',
+  },
+  {
+    id: 5,
+    name: 'Красная поляна',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: false,
+    startPrice: '500р',
+  },
+  {
+    id: 6,
+    name: 'Красная поляна',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: false,
+    startPrice: '500р',
+  },
+  {
+    id: 7,
+    name: 'Красная поляна',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: false,
+    startPrice: '500р',
+  },
+  {
+    id: 8,
+    name: 'Красная поляна',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: false,
+    startPrice: '500р',
+  },
 ];

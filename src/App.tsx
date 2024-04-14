@@ -14,7 +14,11 @@ const App = () => {
         <div className="hero__background">
           <Hero />
         </div>
-        <Excurs />
+        <div className="excurs__background">
+          <Excurs />
+          <span className="excurs__background__top"></span>
+          <span className="excurs__background__mountain"></span>
+        </div>
       </div>
     </BrowserRouter>
   );

@@ -1,9 +1,17 @@
 import { useRef, useState } from 'react';
 import Slider from 'react-slick';
+import { CardInterface } from '../../../types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Card from './Card';
 
-const MainSlider = ({ images }: { images: string[] }) => {
+const CardsSlider = ({
+  cards,
+  styleName,
+}: {
+  cards: CardInterface[];
+  styleName: string;
+}) => {
   const sliderRef = useRef<Slider>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -13,8 +21,9 @@ const MainSlider = ({ images }: { images: string[] }) => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '0px',
+    centerMode: false,
+    initialSlide: 0,
+    centerPadding: '0',
     variableWidth: true,
     autoplaySpeed: 10000,
     afterChange: (index: number) => {
@@ -36,38 +45,32 @@ const MainSlider = ({ images }: { images: string[] }) => {
   return (
     <>
       <div
-        className="hero__slider"
+        className={`${styleName}__slider slider`}
         style={{ position: 'relative', overflow: 'hidden' }}
       >
         <Slider ref={sliderRef} {...settings}>
-          {images.map((image, index) => (
-            <div className="hero__slider__box" key={index}>
-              <img
-                src={image}
-                alt={`Slide ${index}`}
-                className="hero__slider__img"
-              />
-            </div>
+          {cards.map((card, i) => (
+            <Card key={i} card={card} />
           ))}
         </Slider>
       </div>
-      <div className="slider__controller hero__slider__controller">
+      <div className={`${styleName}__slider__controller slider__controller`}>
         <button
-          className="hero__slider__button hero__slider__button__left slider__button slider__button__left"
+          className={`${styleName}__slider__button slider__button ${styleName}__slider__button__left slider__button__left`}
           onClick={() => sliderRef.current?.slickPrev()}
         >
           {`<`}
         </button>
-        <p className="hero__slider__dotes slider__dotes">
-          {images.map((_img, i) => (
+        <p className={`${styleName}__slider__dotes slider__dotes`}>
+          {cards.map((_img, i) => (
             <span
               key={i}
-              className={`hero__slider__dote slider__dote ${i === activeIndex ? 'hero__slider__dote--active slider__dote--active' : ''}`}
+              className={`${styleName}__slider__dote slider__dote ${i === activeIndex ? `${styleName}__slider__dote--active slider__dote--active` : ''}`}
             ></span>
           ))}
         </p>
         <button
-          className="hero__slider__button slider__button hero__slider__button__right slider__button__right"
+          className={`${styleName}__slider__button slider__button ${styleName}__slider__button__right slider__button__right`}
           onClick={() => sliderRef.current?.slickNext()}
         >
           {`>`}
@@ -77,4 +80,4 @@ const MainSlider = ({ images }: { images: string[] }) => {
   );
 };
 
-export default MainSlider;
+export default CardsSlider;

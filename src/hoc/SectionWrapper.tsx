@@ -8,7 +8,8 @@ interface SectionWrapperProps {
 
 const SectionWrapper = <P extends object>(
   WrappedComponent: ComponentType<P>,
-  idSeclector: string = ""
+  idSeclector: string = "",
+  isSection: boolean = true,
 ) => {
   const variants: Variants = staggerContainer();
 
@@ -19,7 +20,7 @@ const SectionWrapper = <P extends object>(
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: true, amount: 0.25 }}
-        className={`section ${idSeclector}`}
+        className={`${isSection ? 'section' : 'section__vide'} ${idSeclector}`}
       >
         {idSeclector && <span className="hash-span" id={idSeclector}>&nbsp;</span>}
         <WrappedComponent {...rest as P} />
