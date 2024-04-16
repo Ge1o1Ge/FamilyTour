@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 
 import { Excurs, Hero, Header } from './components';
+import VipTours from './components/VipTours';
 
 const App = () => {
   return (
@@ -18,6 +19,10 @@ const App = () => {
           <Excurs />
           <span className="excurs__background__top"></span>
           <span className="excurs__background__mountain"></span>
+        </div>
+        <div className="vip-tours__background">
+          <span className="vip-tours__background__top"></span>
+          <VipTours />
         </div>
       </div>
     </BrowserRouter>

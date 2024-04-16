@@ -443,6 +443,7 @@
 .excurs {
   z-index: 3;
   @extend %text-font;
+  margin-bottom: 20px;
 
   &__background {
     position: relative;
@@ -476,6 +477,60 @@
     background-repeat: no-repeat;
     overflow: hidden;
     z-index: 1;
+  }
+
+  &__description {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-size: 60px;
+  }
+
+  &__text {
+    font-size: 16px;
+    max-width: 650px;
+    margin-top: 25px;
+    font-weight: normal;
+  }
+
+  &__tags {
+    font-size: 12px;
+    color: $buttonsP;
+  }
+
+  &__slider__dote--active::before {
+    background-color: $darkEls;
+  }
+}
+
+.vip-tours {
+  z-index: 3;
+  @extend %text-font;
+  margin-bottom: 20px;
+
+  &__background {
+    position: relative;
+    min-height: 500px;
+    width: 100%;
+    background-color: #F1F1F1;
+    color: #000;
+  }
+
+  &__background__top {
+    position: absolute;
+    top: -150px;
+    left: 0;
+    transform: translateY(-80%);
+    height: 456px;
+    width: 100%;
+    background-image: url('../assets/clouds.png');
+    background-size: cover;
+    transform: rotate(180deg);
+    z-index: 0;
   }
 
   &__description {

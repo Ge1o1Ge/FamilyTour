@@ -26,6 +26,7 @@ const CardsSlider = ({
     centerPadding: '0',
     variableWidth: true,
     autoplaySpeed: 10000,
+    arrows: false,
     afterChange: (index: number) => {
       setActiveIndex(index);
     },
