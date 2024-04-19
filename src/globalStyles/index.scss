@@ -516,7 +516,7 @@
     position: relative;
     min-height: 500px;
     width: 100%;
-    background-color: #F1F1F1;
+    background-color: #f1f1f1;
     color: #000;
   }
 
@@ -558,5 +558,87 @@
 
   &__slider__dote--active::before {
     background-color: $darkEls;
+  }
+}
+
+.sea {
+  margin-top: 20px;
+  z-index: 3;
+  @extend %text-font;
+  margin-bottom: 50px;
+
+  &__background {
+    position: relative;
+    min-height: 500px;
+    width: 100%;
+    background-image: url('../assets/sea_bg.png');
+    background-size: cover;
+    color: #000;
+  }
+
+  &__background__top {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    transform: translateY(-80%);
+    height: 456px;
+    width: 100%;
+
+    background-size: cover;
+    transform: rotate(180deg);
+    z-index: 0;
+  }
+
+  &__description {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-size: 60px;
+  }
+
+  &__text {
+    font-size: 16px;
+    max-width: 650px;
+    margin-top: 25px;
+    font-weight: normal;
+  }
+
+  &__tags {
+    font-size: 12px;
+    color: $buttonsP;
+  }
+
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+  }
+
+  &__card {
+    max-width: 30%;
+    width: 30%;
+    margin: 0;
+  }
+
+  &__card:first-child,  &__card:last-child {
+    max-width: calc(70% - 20px);
+    width: calc(70% - 20px);
+  }
+
+  &__card__img {
+    width: 100%;
+  }
+
+  &__card__title {
+    text-align: start;
+  }
+
+  &__card__buttons {
+    justify-content: end;
   }
 }

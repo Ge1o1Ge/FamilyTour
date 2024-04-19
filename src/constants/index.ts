@@ -213,3 +213,47 @@ export const vipToursCardsInfo = [
     startPrice: '500р',
   },
 ];
+
+export const seaCardsInfo = [
+  {
+    id: 0,
+    name: 'Морские прогулки',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: false,
+    startPrice: '0',
+  },
+  {
+    id: 1,
+    name: 'Рыбалка',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: false,
+    startPrice: '0',
+  },
+  {
+    id: 2,
+    name: 'Дайвинг',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: false,
+    startPrice: '0',
+  },
+  ,
+  {
+    id: 3,
+    name: 'Аренда яхт и катеров',
+    order: '',
+    description: '',
+    img: [redFlat],
+    isHit: false,
+    isNew: false,
+    startPrice: '0',
+  },
+];

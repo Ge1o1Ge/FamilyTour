@@ -7,7 +7,7 @@ const Excurs = () => {
   return (
     <div className="excurs">
       <div className="excurs__description">
-        <h2 className="excurs__title">Экскурсии</h2>
+        <h2 className="excurs__title">VIP Туры</h2>
         <p className="excurs__text">
           Откройте для себя магию Черноморского побережья в увлекательных
           экскурсиях! Погрузитесь в красоту местных пейзажей, исторических
