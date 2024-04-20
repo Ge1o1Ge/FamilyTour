@@ -43,5 +43,5 @@ const header = () => {
   );
 };
 
-const headerWrapped = SectionWrapper(header, 'excurs');
+const headerWrapped = SectionWrapper(header, 'header__section');
 export default headerWrapped;

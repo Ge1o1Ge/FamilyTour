@@ -1,8 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import { Excurs, Hero, Header } from './components';
+import { Excurs, Hero, Header, Sea, Hotels } from './components';
 import VipTours from './components/VipTours';
-import Sea from './components/Sea';
 
 const App = () => {
   return (
@@ -28,6 +27,11 @@ const App = () => {
         <div className="sea__background">
           <span className="sea__background__top"></span>
           <Sea />
+        </div>
+        <div className="hotels__background">
+          <span className="hotels__background__top"></span>
+          <span className="hotels__background__bottom"></span>
+          <Hotels />
         </div>
       </div>
     </BrowserRouter>

@@ -26,5 +26,5 @@ const Sea = () => {
   );
 };
 
-const SeaWrapped = SectionWrapper(Sea, 'Sea', true);
+const SeaWrapped = SectionWrapper(Sea, 'sea', true);
 export default SeaWrapped;

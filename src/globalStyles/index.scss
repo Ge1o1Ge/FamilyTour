@@ -9,6 +9,10 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .main {
   background-color: $bgColor;
   display: flex;
@@ -193,13 +197,13 @@
 
 .header {
   position: relative;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100px;
   width: auto;
   z-index: 3;
+  margin: 0 auto;
 
   &__background {
     position: relative;
@@ -578,14 +582,13 @@
 
   &__background__top {
     position: absolute;
-    top: 0px;
-    left: 0;
-    transform: translateY(-80%);
-    height: 456px;
-    width: 100%;
-
-    background-size: cover;
-    transform: rotate(180deg);
+    top: 8%;
+    left: 2%;
+    height: 200px;
+    width: 200px;
+    background-image: url('../assets/birds.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     z-index: 0;
   }
 
@@ -628,6 +631,80 @@
   &__card:first-child,  &__card:last-child {
     max-width: calc(70% - 20px);
     width: calc(70% - 20px);
+  }
+
+  &__card__img {
+    width: 100%;
+  }
+
+  &__card__title {
+    text-align: start;
+  }
+
+  &__card__buttons {
+    justify-content: end;
+  }
+}
+
+.hotels {
+  margin-top: 20px;
+  z-index: 3;
+  @extend %text-font;
+  margin-bottom: 50px;
+
+  &__background {
+    position: relative;
+    width: 100%;
+  }
+
+  &__background__top {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    height: 280px;
+    width: 500px;
+    background-image: url('../assets/cloud1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+
+  &__background__bottom {
+    position: absolute;
+    top: 33%;
+    right: 0;
+    height: 280px;
+    width: 500px;
+    background-image: url('../assets/cloud2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+
+  &__description {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-size: 60px;
+    color: $textBlue;
+  }
+
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+  }
+
+  &__card {
+    max-width: 32%;
+    width: 33%;
+    margin: 0;
   }
 
   &__card__img {

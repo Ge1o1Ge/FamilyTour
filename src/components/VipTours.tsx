@@ -7,7 +7,7 @@ const VipTours = () => {
   return (
     <div className="vip-tours">
       <div className="vip-tours__description">
-        <h2 className="vip-tours__title">Экскурсии</h2>
+        <h2 className="vip-tours__title">VIP Туры</h2>
         <p className="vip-tours__text">
           Исследуйте Черное море с элегантными VIP турами! Откройте для себя
           роскошь побережья в уединении, наслаждаясь приватными экскурсиями и
