@@ -32,8 +32,8 @@ const Transfers = () => {
             #Трансфер #Черное_Море{' '}
           </p>
           <div className="transfers__form__fields">
+            <p className="transfers__form__text">Даты трансфера</p>
             <div className="transfers__form__fields__dates">
-              <p className="transfers__form__text">Даты трансфера</p>
               <label htmlFor="transfers__form__input__date1">Туда:</label>
               <input
                 id="transfers__form__input__date1"
@@ -43,6 +43,7 @@ const Transfers = () => {
               />
               <input
                 id="transfers__form__input__time1"
+                className="transfers__form__input__time"
                 type="time"
                 defaultValue="22:00"
               />
@@ -63,43 +64,52 @@ const Transfers = () => {
                   <input
                     id="transfers__form__input__time2"
                     type="time"
+                    className="transfers__form__input__time"
                     defaultValue="22:00"
                   />
                 </>
               )}
             </div>
             <div className="transfers__form__fields__places">
-              <label htmlFor="transfers__form__input__from">
-                Откуда забрать:
-              </label>
-              <input
-                id="transfers__form__input__from"
-                type="text"
-                placeholder="аэропорт Сочи"
-              />
-              <label htmlFor="transfers__form__input__to">
-                Куда доставить:
-              </label>
-              <input
-                id="transfers__form__input__to"
-                type="text"
-                placeholder="отель Парадайз"
-              />
+              <div>
+                <label htmlFor="transfers__form__input__from">
+                  Откуда забрать:
+                </label>
+                <input
+                  id="transfers__form__input__from"
+                  className="transfers__form__input__from__location"
+                  type="text"
+                  placeholder="аэропорт Сочи"
+                />
+              </div>
+              <div>
+                <label htmlFor="transfers__form__input__to">
+                  Куда доставить:
+                </label>
+                <input
+                  id="transfers__form__input__to"
+                  className="transfers__form__input__from__location"
+                  type="text"
+                  placeholder="отель Парадайз"
+                />
+              </div>
             </div>
             <div className="transfers__form__fields__details">
-              <label htmlFor="transfers__form__input__passangers">
-                Кол-во пассажиров:
-              </label>
-              <input
-                id="transfers__form__input__passangers"
-                type="number"
-                placeholder="1"
-                min="1"
-              />
-              <label htmlFor="transfers__form__input__child">
-                Детское кресло:
-              </label>
-              <input type="checkbox" id="transfers__form__input__child" />
+              <div className="transfers__form__fields__details__box">
+                <label htmlFor="transfers__form__input__passangers">
+                  Кол-во пассажиров:
+                </label>
+                <input
+                  id="transfers__form__input__passangers"
+                  type="number"
+                  placeholder="1"
+                  min="1"
+                />
+                <label htmlFor="transfers__form__input__child">
+                  Детское кресло:
+                </label>
+                <input type="checkbox" id="transfers__form__input__child" />
+              </div>
               <label htmlFor="transfers__form__input__baggadge">
                 Чемоданы:
               </label>
@@ -111,23 +121,23 @@ const Transfers = () => {
               />
             </div>
             <div className="transfers__form__fields__contacts">
-              <label htmlFor="transfers__form__input__phone">
-                Телефон:
-              </label>
-              <input
-                id="transfers__form__input__phone"
-                type="text"
-                placeholder="+7-911-123-45-67"
-                pattern="\+\d{1,3}-\d{3}-\d{3}-\d{2}-\d{2}"
-              />
-              <label htmlFor="transfers__form__input__name">
-                Имя:
-              </label>
-              <input
-                id="transfers__form__input__name"
-                type="text"
-                placeholder="Петр Иванович"
-              />
+              <div>
+                <label htmlFor="transfers__form__input__phone">Телефон:</label>
+                <input
+                  id="transfers__form__input__phone"
+                  type="text"
+                  placeholder="+7-911-123-45-67"
+                  pattern="\+\d{1,3}-\d{3}-\d{3}-\d{2}-\d{2}"
+                />
+              </div>
+              <div>
+                <label htmlFor="transfers__form__input__name">Имя:</label>
+                <input
+                  id="transfers__form__input__name"
+                  type="text"
+                  placeholder="Петр Иванович"
+                />
+              </div>
             </div>
           </div>
         </div>

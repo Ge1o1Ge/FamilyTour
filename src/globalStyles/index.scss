@@ -628,7 +628,8 @@ html {
     margin: 0;
   }
 
-  &__card:first-child,  &__card:last-child {
+  &__card:first-child,
+  &__card:last-child {
     max-width: calc(70% - 20px);
     width: calc(70% - 20px);
   }
@@ -717,5 +718,166 @@ html {
 
   &__card__buttons {
     justify-content: end;
+  }
+}
+
+.transfers {
+  margin-top: 20px;
+  z-index: 3;
+  @extend %text-font;
+  margin-bottom: 50px;
+  color: $textBlue;
+
+  &__background {
+    position: relative;
+    width: 100%;
+    background-image: url('../assets/transfer-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__background__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 30px;
+    background-image: url('../assets/transfer-line.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    z-index: 0;
+  }
+
+  &__background__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 30px;
+    background-image: url('../assets/transfer-line.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    z-index: 0;
+  }
+
+  &__description {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-size: 60px;
+    color: $textBlue;
+    margin-top: 50px;
+  }
+
+  &__text {
+    font-size: 16px;
+    max-width: 650px;
+    margin-top: 25px;
+    font-weight: normal;
+  }
+
+  &__tags {
+    font-size: 12px;
+    color: $textLight;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    display: flex;
+    font-size: 15px;
+  }
+
+  &__form input {
+    border: none;
+    border-radius: 15px;
+    padding: 5px 15px 5px 15px;
+    margin: 10px 5px;
+    background-color: $inputsBg;
+    color: $buttonsP;
+  }
+
+  &__form input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+
+  &__form input[type='checkbox'] {
+    position: relative;
+    opacity: 1;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+
+  &__form input[type='checkbox']::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: all ease 0.2s;
+  }
+
+  &__form input[type='checkbox']:checked:before {
+    background-color: #007bff;
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $textBlue;
+    transition: all ease 0.2s;
+  }
+
+  &__form__left {
+    max-width: calc(50% - 20px);
+    margin-right: 20px;
+  }
+
+  &__form__fields__dates {
+    margin-top: 10px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__form__input__time {
+    bottom: 0;
+    left: 15%;
+    position: absolute;
+  }
+
+  #transfers__form__input__time2 {
+    left: 57%;
+  }
+
+  &__form__input__from__location {
+    width: 100%;
+  }
+
+  &__form__fields__details__box {
+    display: flex;
+    align-items: center;
+  }
+
+  #transfers__form__input__passangers {
+    width: 70px;
+    text-align: center;
+  }
+
+  #transfers__form__input__baggadge {
+    width: 70px;
+    text-align: center;
+  }
+
+  &__form__fields__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }

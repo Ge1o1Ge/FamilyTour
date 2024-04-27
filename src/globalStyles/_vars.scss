@@ -1,12 +1,14 @@
 $bgColor: #282836;
 
-$textLight: #FFFFFF;
-$textBlue: #D4FFFF;
+$textLight: #ffffff;
+$textBlue: #d4ffff;
 
-$bgSpan: #9BC8FF;
+$inputsBg: #d9d9d9;
 
-$buttons: #3F4652;
-$buttonsP: #4145A9;
+$bgSpan: #9bc8ff;
+
+$buttons: #3f4652;
+$buttonsP: #4145a9;
 
 $spanBg: #454647;
 
@@ -15,21 +17,19 @@ $darkEls: #313131;
 $middle: #9d8d8f;
 
 $textDark: #000;
-$blue: #01BF9C;
+$blue: #01bf9c;
 
 %title-font {
-    font-family: 'Comfortaa', sans-serif;
-    // font-family: 'Playpen Sans', cursive;
-    font-size: 25px;
-    line-height: 1.50;
+  font-family: 'Comfortaa', sans-serif;
+  // font-family: 'Playpen Sans', cursive;
+  font-size: 25px;
+  line-height: 1.5;
 }
 
 %text-font {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    color: #313131;
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #313131;
 }
-
-
