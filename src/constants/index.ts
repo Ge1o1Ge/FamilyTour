@@ -36,15 +36,19 @@ export const menuLinks = [
   },
   {
     name: 'Отели',
-    link: '',
+    link: '#hotels',
   },
   {
     name: 'Трансфер',
-    link: '',
+    link: '#transfers',
+  },
+  {
+    name: 'Отзывы',
+    link: '#reviwes',
   },
   {
     name: 'Контакты',
-    link: '',
+    link: '#contacts',
   }
 ];
 

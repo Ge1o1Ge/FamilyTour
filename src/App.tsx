@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { Excurs, Hero, Header, Sea, Hotels } from './components';
 import VipTours from './components/VipTours';
+import Transfers from './components/Transfers';
 
 const App = () => {
   return (
@@ -32,6 +33,11 @@ const App = () => {
           <span className="hotels__background__top"></span>
           <span className="hotels__background__bottom"></span>
           <Hotels />
+        </div>
+        <div className="transfers__background">
+          <span className="transfers__background__top"></span>
+          <span className="transfers__background__bottom"></span>
+          <Transfers />
         </div>
       </div>
     </BrowserRouter>
