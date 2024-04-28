@@ -39,6 +39,11 @@ const App = () => {
           <span className="transfers__background__bottom"></span>
           <Transfers />
         </div>
+        <div className="hotels__background">
+          <span className="hotels__background__top"></span>
+          <span className="hotels__background__bottom"></span>
+          <Hotels />
+        </div>
       </div>
     </BrowserRouter>
   );

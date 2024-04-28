@@ -8,3 +8,7 @@ export interface CardInterface {
   isNew: boolean;
   startPrice: string;
 }
+
+export interface AddressInputProps {
+  id: string
+}

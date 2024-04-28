@@ -860,6 +860,37 @@ html {
     width: 100%;
   }
 
+  &__form__input__from__location__box {
+    position: relative;
+  }
+
+  &__form__input__from__location__suppose {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: -5px;
+    max-height: 200px;
+    background-color: #313131;
+    z-index: 1000;
+    list-style: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow-y: scroll;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  &__form__input__from__location__suppose.active {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  &__form__input__from__location__suppose li {
+    margin: 5px;
+    border-bottom: 1px solid $textBlue;
+  }
+
   &__form__fields__details__box {
     display: flex;
     align-items: center;
@@ -879,5 +910,47 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .carousel-menu {
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+  }
+
+  .carousel-item {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    transition: all 0.9s ease;
+    background-color: #313131;
+  }
+
+  .carousel-item.order__1 {
+    padding-left: 70px;
+    z-index: 1;
+  }
+
+  .carousel-item.order__2 {
+    padding-left: 20px;
+    z-index: 2;
+  }
+
+  .carousel-item.order__3 {
+    z-index: 10;
+  }
+
+  .carousel-item.order__4 {
+    padding-left: 20px;
+    z-index: 3;
+  }
+
+  .carousel-item.order__5 {
+    padding-left: 70px;
+    z-index: 4;
+  }
+
+  .active {
+    background-color: lightblue;
   }
 }

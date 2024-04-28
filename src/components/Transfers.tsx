@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SectionWrapper } from '../hoc';
+import AddressInput from './modules/AdressInput';
+import VerticalCarousel from './modules/VerticalCarousel';
 
 const Transfers = () => {
   const [placeholderDate, setPlaceholderDate] = useState('');
@@ -75,23 +77,13 @@ const Transfers = () => {
                 <label htmlFor="transfers__form__input__from">
                   Откуда забрать:
                 </label>
-                <input
-                  id="transfers__form__input__from"
-                  className="transfers__form__input__from__location"
-                  type="text"
-                  placeholder="аэропорт Сочи"
-                />
+                <AddressInput id="transfers__form__input__from" />
               </div>
               <div>
                 <label htmlFor="transfers__form__input__to">
                   Куда доставить:
                 </label>
-                <input
-                  id="transfers__form__input__to"
-                  className="transfers__form__input__from__location"
-                  type="text"
-                  placeholder="отель Парадайз"
-                />
+                <AddressInput id="transfers__form__input__to" />
               </div>
             </div>
             <div className="transfers__form__fields__details">
@@ -144,6 +136,7 @@ const Transfers = () => {
         <div className="transfers__form__right">
           <h2 className="transfers__form__title">Выбор тарифа</h2>
           <div className="transfers__form__carousel">выбор вариантов</div>
+          <VerticalCarousel />
         </div>
       </form>
       <div className="transfers__form__cars">машинки слайдер</div>
