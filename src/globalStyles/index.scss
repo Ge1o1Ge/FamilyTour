@@ -912,7 +912,59 @@ html {
     justify-content: space-between;
   }
 
+  &__form__right {
+    width: 50%;
+  }
+
+  .carousel-container {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .carousel__vertical__line {
+    position: absolute;
+    background-color: $blue;
+    top: 30px;
+    left: 20px;
+    height: 312px;
+    width: 2px;
+  }
+
+  .carousel__vertical__button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -14px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-color: $buttonsP;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  .carousel__vertical__button__up {
+    top: -28px;
+  }
+
+  .carousel__vertical__dote {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: -4px;
+    background-color: $bgColor;
+    border: 2px solid $blue;
+    border-radius: 100%;
+    transition: all 0.9s ease;
+  }
+
+  .carousel__vertical__button__down {
+    bottom: -28px;
+  }
+
   .carousel-menu {
+    margin-left: 50px;
     padding: 0;
     list-style-type: none;
     position: relative;
@@ -922,35 +974,44 @@ html {
     position: absolute;
     left: 0;
     padding: 10px;
-    transition: all 0.9s ease;
-    background-color: #313131;
+    transition-property: top, left, width, height, transform, padding-left, color, border;
+    transition-duration: 0.9s;
+    transition-timing-function: ease;
+    opacity: 1;
+    cursor: pointer;
   }
 
   .carousel-item.order__1 {
     padding-left: 70px;
+    color: rgba($textLight, 0.6);
     z-index: 1;
   }
 
   .carousel-item.order__2 {
     padding-left: 20px;
+    color: rgba($textLight, 0.8);
     z-index: 2;
   }
 
   .carousel-item.order__3 {
     z-index: 10;
+    color: $blue;
+    border-bottom: 2px solid $textLight;
   }
 
   .carousel-item.order__4 {
     padding-left: 20px;
+    color: rgba($textLight, 0.8);
     z-index: 3;
   }
 
   .carousel-item.order__5 {
     padding-left: 70px;
-    z-index: 4;
+    color: rgba($textLight, 0.6);
+    z-index: 1;
   }
 
-  .active {
-    background-color: lightblue;
+  .carousel__item_hidden {
+    opacity: 0;
   }
 }

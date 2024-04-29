@@ -135,7 +135,6 @@ const Transfers = () => {
         </div>
         <div className="transfers__form__right">
           <h2 className="transfers__form__title">Выбор тарифа</h2>
-          <div className="transfers__form__carousel">выбор вариантов</div>
           <VerticalCarousel />
         </div>
       </form>

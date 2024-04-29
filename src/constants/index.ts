@@ -49,7 +49,7 @@ export const menuLinks = [
   {
     name: 'Контакты',
     link: '#contacts',
-  }
+  },
 ];
 
 export const excursCardsInfo = [
@@ -321,5 +321,52 @@ export const hotelsCardsInfo = [
     isHit: false,
     isNew: false,
     startPrice: '0',
+  },
+];
+
+export const transferTarifOptions = [
+  {
+    id: 1,
+    name: 'Комфорт класс',
+    description: '',
+    carImg: '',
+    startPrice: 'От 1000р',
+    order: 1,
+    invisible: false,
+  },
+  {
+    id: 2,
+    name: 'Бизнес класс',
+    description: '',
+    carImg: '',
+    startPrice: 'От 1000р',
+    order: 2,
+    invisible: false,
+  },
+  {
+    id: 3,
+    name: 'Минивен',
+    description: 'до 7 пассажиров',
+    carImg: '',
+    startPrice: 'От 1000р',
+    order: 3,
+    invisible: false,
+  },
+  {
+    id: 4,
+    name: 'Микроавтобус',
+    description: 'до 20 пассажиров',
+    startPrice: 'От 1000р',
+    order: 4,
+    invisible: false,
+  },
+  {
+    id: 5,
+    name: 'V - Класс',
+    description: '',
+    carImg: '',
+    startPrice: 'От 1000р',
+    order: 5,
+    invisible: false,
   },
 ];

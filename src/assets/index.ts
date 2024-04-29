@@ -6,6 +6,8 @@ import waIcon from "./wa-icon.svg";
 import phoneIcon from "./phone-icon.svg";
 import clouds from "./clouds.png";
 import redFlat from "./set/red-flat.jpg";
+import arrowUp from "./arrow-up.svg";
+import arrowDown from "./arrow-down.svg";
 
 import slide1 from "./slider/sochi.png";
 
@@ -16,7 +18,9 @@ export {
   waIcon,
   phoneIcon,
   clouds,
-  redFlat
+  redFlat,
+  arrowUp,
+  arrowDown,
 };
 
 export const slides = {
