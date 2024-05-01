@@ -53,7 +53,7 @@ const TransfersCarCarousel = () => {
               <div className="car__carousel-item__box">
                 <p className="car__carousel-item__title">{item.name}</p>
                 <span className="car__carousel-item__text">
-                  {item.description}
+                  {item.description} {' '}
                 </span>
                 <img
                   className="car__carousel-item__img"
