@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Excurs, Hero, Header, Sea, Hotels } from './components';
 import VipTours from './components/VipTours';
 import Transfers from './components/Transfers';
+import Reviews from './components/Reviews';
 
 const App = () => {
   return (
@@ -39,10 +40,10 @@ const App = () => {
           <span className="transfers__background__bottom"></span>
           <Transfers />
         </div>
-        <div className="hotels__background">
-          <span className="hotels__background__top"></span>
-          <span className="hotels__background__bottom"></span>
-          <Hotels />
+        <div className="reviews__background">
+          <span className="reviews__background__top"></span>
+          <span className="reviews__background__bottom"></span>
+          <Reviews />
         </div>
       </div>
     </BrowserRouter>

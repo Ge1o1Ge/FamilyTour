@@ -1116,3 +1116,68 @@ html {
     }
   }
 }
+
+.reviews {
+  z-index: 3;
+  @extend %text-font;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: rgba($textBlue, 1);
+
+  &__title {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+
+  &__slider__dote--active::before {
+    background-color: $darkEls;
+  }
+
+  .slider {
+    margin-left: 0;
+  }
+
+  .slider__dote--active::before {
+    background-color: rgba($textLight, 1);
+  }
+
+  &__slider__card {
+    width: 370px !important;
+    height: 214px;
+    margin-right: 20px;
+    padding: 10px 15px;
+    background-image: linear-gradient(to bottom right, #424242, rgba(40, 49, 60, 0.6));
+    border: 2px solid transparent; /* Прозрачная рамка */
+    border-radius: 15px;
+  }
+
+  &__slider__time {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    color: rgba($textLight, 0.8);
+  }
+
+  &__slider__stars {
+    display: flex;
+  }
+
+  &__slider__title {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  &__slider__text {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: rgba($textLight, 1);
+  }
+
+  &__slider__name {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: rgba($blue, 1);
+  }
+}

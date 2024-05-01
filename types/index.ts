@@ -10,15 +10,24 @@ export interface CardInterface {
 }
 
 export interface TransfersInterface {
-  id: number,
-  name: string,
-  description: string,
-  carImg: string,
-  startPrice: string,
-  order: number,
-  invisible: boolean,
+  id: number;
+  name: string;
+  description: string;
+  carImg: string;
+  startPrice: string;
+  order: number;
+  invisible: boolean;
 }
 
 export interface AddressInputProps {
-  id: string
+  id: string;
+}
+
+export interface ReviewesInfoI {
+  id: number;
+  name: string;
+  title: string;
+  description: string;
+  timeTag: string;
+  stars: number;
 }

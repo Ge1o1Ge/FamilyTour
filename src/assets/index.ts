@@ -8,6 +8,7 @@ import clouds from './clouds.png';
 import redFlat from './set/red-flat.jpg';
 import arrowUp from './arrow-up.svg';
 import arrowDown from './arrow-down.svg';
+import star from './star.svg';
 
 import bisnesCar from './transfers/bisnes.png';
 import busCar from './transfers/bus.png';
@@ -32,6 +33,7 @@ export {
   comfortCar,
   minivenCar,
   vClassCar,
+  star,
 };
 
 export const slides = {
