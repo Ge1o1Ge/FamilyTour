@@ -1,14 +1,15 @@
-import { useState } from 'react';
-import { transferTarifOptions } from '../../constants';
+import { useEffect } from 'react';
 import { arrowDown, arrowUp } from '../../assets';
+import { useTransfersInfo, useTransfersSelectedItem } from '../../assets/hooks/useTransfersInfo';
+import { setSelectedItemTransfers, setTranfersInfo } from '../../context/transfersInfo';
 
 const VerticalCarousel = () => {
-  const [menuItems, setMenuItems] = useState(transferTarifOptions);
-  const [selectedItem, setSelectedItem] = useState<number>(3);
+  const { tranfersInfo } = useTransfersInfo(); // Используем глобальный контекст и событие для обновления данных
+  const { transfersSelectedItem } = useTransfersSelectedItem();
 
   const handleItemClick = (itemId: number) => {
-    const updatedMenuItems = [...menuItems];
-    const distance = selectedItem - itemId;
+    const updatedMenuItems = [...tranfersInfo]; // Используем данные из глобального контекста
+    const distance = transfersSelectedItem - itemId;
 
     updatedMenuItems.forEach((item) => {
       if (
@@ -22,8 +23,8 @@ const VerticalCarousel = () => {
       item.order = (item.order + distance + 5) % 5 || 5;
     });
 
-    setSelectedItem(itemId);
-    setMenuItems(updatedMenuItems);
+    setSelectedItemTransfers(itemId);
+    setTranfersInfo(updatedMenuItems);
 
     setTimeout(() => {
       const resetVisibilityMenuItems = updatedMenuItems.map((item) => {
@@ -31,9 +32,18 @@ const VerticalCarousel = () => {
         updatedItem.invisible = false;
         return updatedItem;
       });
-      setMenuItems(resetVisibilityMenuItems);
+      setTranfersInfo(resetVisibilityMenuItems); // Обновляем данные в глобальном контексте с помощью события
     }, 500);
   };
+
+  useEffect(() => {
+    const resetVisibilityMenuItems = tranfersInfo.map((item) => {
+      const updatedItem = { ...item };
+      updatedItem.invisible = false;
+      return updatedItem;
+    });
+    setTranfersInfo(resetVisibilityMenuItems); // Обновляем глобальный контекст
+  }, [setTranfersInfo]);
 
   return (
     <div className="carousel-container">
@@ -41,7 +51,7 @@ const VerticalCarousel = () => {
         <button
           onClick={(ev) => {
             ev.preventDefault();
-            handleItemClick((selectedItem + 4) % 5 || 5);
+            handleItemClick((transfersSelectedItem + 4) % 5 || 5);
           }}
           className="carousel__vertical__button carousel__vertical__button__up"
         >
@@ -51,12 +61,15 @@ const VerticalCarousel = () => {
             alt="предыдущий тариф"
           />
         </button>
-        <span className="carousel__vertical__dote" style={{top: (selectedItem - 1) * 75}}></span>
+        <span
+          className="carousel__vertical__dote"
+          style={{ top: (transfersSelectedItem - 1) * 75 }}
+        ></span>
         <span className="carousel__vertical__selector-line"></span>
         <button
           onClick={(ev) => {
             ev.preventDefault();
-            handleItemClick((selectedItem + 1) % 5 || 5);
+            handleItemClick((transfersSelectedItem + 1) % 5 || 5);
           }}
           className="carousel__vertical__button carousel__vertical__button__down"
         >
@@ -68,10 +81,10 @@ const VerticalCarousel = () => {
         </button>
       </span>
       <ul className="carousel-menu">
-        {menuItems.map((item) => (
+        {tranfersInfo.map((item) => (
           <li
             key={item.id}
-            className={`carousel-item ${selectedItem === item.id ? 'active' : ''} order__${item.order} ${item.invisible ? 'carousel__item_hidden' : ''}`}
+            className={`carousel-item ${transfersSelectedItem === item.id ? 'active' : ''} order__${item.order} ${item.invisible ? 'carousel__item_hidden' : ''}`}
             onClick={() => handleItemClick(item.id)}
             style={{ top: (item.order - 1) * 75 }}
           >

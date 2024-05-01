@@ -9,6 +9,16 @@ export interface CardInterface {
   startPrice: string;
 }
 
+export interface TransfersInterface {
+  id: number,
+  name: string,
+  description: string,
+  carImg: string,
+  startPrice: string,
+  order: number,
+  invisible: boolean,
+}
+
 export interface AddressInputProps {
   id: string
 }

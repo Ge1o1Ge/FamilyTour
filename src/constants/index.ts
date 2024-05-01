@@ -1,4 +1,14 @@
-import { redFlat, tgIcon, vkIcon, waIcon } from '../assets';
+import {
+  redFlat,
+  tgIcon,
+  vkIcon,
+  waIcon,
+  bisnesCar,
+  busCar,
+  comfortCar,
+  minivenCar,
+  vClassCar,
+} from '../assets';
 
 export const socialLinks = [
   {
@@ -329,7 +339,7 @@ export const transferTarifOptions = [
     id: 1,
     name: 'Комфорт класс',
     description: '',
-    carImg: '',
+    carImg: comfortCar,
     startPrice: 'От 1000р',
     order: 1,
     invisible: false,
@@ -338,7 +348,7 @@ export const transferTarifOptions = [
     id: 2,
     name: 'Бизнес класс',
     description: '',
-    carImg: '',
+    carImg: bisnesCar,
     startPrice: 'От 1000р',
     order: 2,
     invisible: false,
@@ -347,7 +357,7 @@ export const transferTarifOptions = [
     id: 3,
     name: 'Минивен',
     description: 'до 7 пассажиров',
-    carImg: '',
+    carImg: minivenCar,
     startPrice: 'От 1000р',
     order: 3,
     invisible: false,
@@ -356,6 +366,7 @@ export const transferTarifOptions = [
     id: 4,
     name: 'Микроавтобус',
     description: 'до 20 пассажиров',
+    carImg: busCar,
     startPrice: 'От 1000р',
     order: 4,
     invisible: false,
@@ -364,7 +375,7 @@ export const transferTarifOptions = [
     id: 5,
     name: 'V - Класс',
     description: '',
-    carImg: '',
+    carImg: vClassCar,
     startPrice: 'От 1000р',
     order: 5,
     invisible: false,

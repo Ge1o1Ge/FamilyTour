@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { SectionWrapper } from '../hoc';
 import AddressInput from './modules/AdressInput';
 import VerticalCarousel from './modules/VerticalCarousel';
+import TransfersSlider from './modules/TransfersCarCarousel';
 
 const Transfers = () => {
   const [placeholderDate, setPlaceholderDate] = useState('');
@@ -19,10 +20,10 @@ const Transfers = () => {
 
   return (
     <div className="transfers">
-      <div className="transfers__description">
+      <div className="transfers__description section">
         <h2 className="transfers__title">Трансфер</h2>
       </div>
-      <form className="transfers__inner transfers__form">
+      <form className="transfers__inner transfers__form section">
         <div className="transfers__form__left">
           <p className="transfers__text">
             Опытные водители на комфортабельных автомобилях готовы доставить вас
@@ -136,13 +137,15 @@ const Transfers = () => {
         <div className="transfers__form__right">
           <h2 className="transfers__form__title">Выбор тарифа</h2>
           <VerticalCarousel />
+          <button className="transfers__form__submit">Заказать трансфер</button>
         </div>
       </form>
-      <div className="transfers__form__cars">машинки слайдер</div>
-      <div className="transfers__box"></div>
+      <div className="transfers__form__slider">
+          <TransfersSlider/>
+        </div>
     </div>
   );
 };
 
-const transfersWrapped = SectionWrapper(Transfers, 'transfers');
+const transfersWrapped = SectionWrapper(Transfers, 'transfers', false);
 export default transfersWrapped;

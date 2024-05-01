@@ -1,15 +1,21 @@
 ///@ts-nocheck
-import logo from "./logo.png";
-import tgIcon from "./tg-icon.svg";
-import vkIcon from "./vk-icon.svg";
-import waIcon from "./wa-icon.svg";
-import phoneIcon from "./phone-icon.svg";
-import clouds from "./clouds.png";
-import redFlat from "./set/red-flat.jpg";
-import arrowUp from "./arrow-up.svg";
-import arrowDown from "./arrow-down.svg";
+import logo from './logo.png';
+import tgIcon from './tg-icon.svg';
+import vkIcon from './vk-icon.svg';
+import waIcon from './wa-icon.svg';
+import phoneIcon from './phone-icon.svg';
+import clouds from './clouds.png';
+import redFlat from './set/red-flat.jpg';
+import arrowUp from './arrow-up.svg';
+import arrowDown from './arrow-down.svg';
 
-import slide1 from "./slider/sochi.png";
+import bisnesCar from './transfers/bisnes.png';
+import busCar from './transfers/bus.png';
+import comfortCar from './transfers/comfort.png';
+import minivenCar from './transfers/miniven.png';
+import vClassCar from './transfers/v-class.png';
+
+import slide1 from './slider/sochi.png';
 
 export {
   logo,
@@ -21,8 +27,13 @@ export {
   redFlat,
   arrowUp,
   arrowDown,
+  bisnesCar,
+  busCar,
+  comfortCar,
+  minivenCar,
+  vClassCar,
 };
 
 export const slides = {
-  slide1
-}
+  slide1,
+};

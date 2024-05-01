@@ -913,6 +913,7 @@ html {
   }
 
   &__form__right {
+    margin-top: 20px;
     width: 50%;
   }
 
@@ -974,7 +975,8 @@ html {
     position: absolute;
     left: 0;
     padding: 10px;
-    transition-property: top, left, width, height, transform, padding-left, color, border;
+    transition-property: top, left, width, height, transform, padding-left,
+      color, border;
     transition-duration: 0.9s;
     transition-timing-function: ease;
     opacity: 1;
@@ -1013,5 +1015,104 @@ html {
 
   .carousel__item_hidden {
     opacity: 0;
+  }
+
+  &__form__submit {
+    background-color: $blue;
+    border: none;
+    padding: 15px;
+    margin: 380px auto 0;
+    margin-left: 5px;
+    width: 50%;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .car {
+    &__carousel-container {
+      position: relative;
+      margin-top: 20px;
+      padding-bottom: 170px;
+    }
+
+    &__carousel-menu {
+      padding: 0;
+      list-style-type: none;
+      position: relative;
+    }
+
+    &__carousel-item {
+      position: absolute;
+      bottom: -180px;
+      left: 0;
+      padding: 10px;
+      width: 16%;
+      margin: 0 1%;
+      transition-property: top, left, width, height, transform, padding-left,
+        color, border, background-color;
+      transition-duration: 0.9s;
+      transition-timing-function: ease;
+      opacity: 1;
+      cursor: pointer;
+      height: 180px;
+      background-color: $inputsBg;
+      color: $textDark;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    &__carousel-item__box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__carousel-item__title {
+      font-size: 15px;
+    }
+
+    &__carousel-item__text {
+      font-size: 10px;
+      margin-top: 5px;
+      line-height: 1.1;
+    }
+
+    &__carousel-item__img {
+      max-width: 100%;
+      height: 110px;
+      transition: all 0.9s ease;
+      object-fit: contain;
+    }
+
+    &__carousel-item.order__1 {
+      z-index: 1;
+    }
+
+    &__carousel-item.order__2 {
+      z-index: 2;
+    }
+
+    &__carousel-item.order__3 {
+      width: 32.5%;
+      height: 240px;
+      background-color: $middle;
+
+      .car__carousel-item__img {
+        height: 160px;
+      }
+    }
+
+    &__carousel-item.order__4 {
+      z-index: 3;
+    }
+
+    &__carousel-item.order__5 {
+      z-index: 1;
+    }
+
+    &__carousel__item_hidden {
+      opacity: 0;
+    }
   }
 }
