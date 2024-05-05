@@ -4,6 +4,7 @@ import { Excurs, Hero, Header, Sea, Hotels } from './components';
 import VipTours from './components/VipTours';
 import Transfers from './components/Transfers';
 import Reviews from './components/Reviews';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -44,6 +45,9 @@ const App = () => {
           <span className="reviews__background__top"></span>
           <span className="reviews__background__bottom"></span>
           <Reviews />
+        </div>
+        <div className="footer__background">
+          <Footer />
         </div>
       </div>
     </BrowserRouter>

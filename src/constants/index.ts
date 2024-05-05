@@ -8,6 +8,12 @@ import {
   comfortCar,
   minivenCar,
   vClassCar,
+  watherFallsImg1,
+  watherFallsImg2,
+  watherFallsImg3,
+  blueLaceImg,
+  divingImg,
+  gaagrImg,
 } from '../assets';
 
 export const socialLinks = [
@@ -447,4 +453,13 @@ export const reviewsCardsInfo = [
     timeTag: '5 дней назад',
     stars: 5,
   },
-]
+];
+
+export const tgImages = [
+  watherFallsImg1,
+  watherFallsImg2,
+  watherFallsImg3,
+  blueLaceImg,
+  divingImg,
+  gaagrImg,
+];

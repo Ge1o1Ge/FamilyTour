@@ -9,6 +9,11 @@
   color-scheme: dark;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -1146,7 +1151,11 @@ html {
     height: 214px;
     margin-right: 20px;
     padding: 10px 15px;
-    background-image: linear-gradient(to bottom right, #424242, rgba(40, 49, 60, 0.6));
+    background-image: linear-gradient(
+      to bottom right,
+      #424242,
+      rgba(40, 49, 60, 0.6)
+    );
     border: 2px solid transparent; /* Прозрачная рамка */
     border-radius: 15px;
   }
@@ -1179,5 +1188,121 @@ html {
     margin-bottom: 15px;
     font-size: 14px;
     color: rgba($blue, 1);
+  }
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 20px;
+
+  &__background {
+    background-color: $darkEls;
+  }
+
+  .left__border {
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .left__border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      $textLight,
+      transparent
+    );
+    z-index: 1;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba($textLight, 0.8);
+    padding-bottom: 20px;
+  }
+
+  &__inner__nav {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+
+  &__nav__link {
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: rgba($textLight, 1);
+  }
+
+  &__inner__tg__link {
+    text-decoration: none;
+    color: rgba($textLight, 1);
+    margin-bottom: 15px;
+  }
+
+  &__inner__tg__link__subscribe {
+    margin-left: 15px;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid rgba($textLight, 0.8);
+    border-radius: 10px;
+  }
+
+  &__inner__tg__box {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+  }
+
+  &__inner__tg__box__img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+  }
+
+  &__social__box {
+    display: flex;
+    margin-top: 25px;
+  }
+
+  &__social__link + &__social__link {
+    margin-left: 15px;
+  }
+
+  &__social__link__img {
+    width: 35px;
+    height: 35px;
+  }
+
+  &__phone__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__phone__link__img {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__phone__link__text {
+    margin-left: 15px;
+  }
+
+  &__phone__time {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    color: rgba($textLight, 0.7);
+  }
+
+  &__bottom {
+    margin: 20px 0;
+    font-size: 16px;
+    color: rgba($textLight, 0.8);
   }
 }
