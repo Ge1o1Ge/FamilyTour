@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__inner">
-        <nav className="footer__inner__nav">
+        <nav className="footer__inner__nav left__border">
           {menuLinks.map((link, i) => (
             <a
               className="footer__nav__link"

@@ -1599,6 +1599,7 @@ html {
 
   .left__border {
     padding-left: 20px;
+    margin-right: 20px;
     position: relative;
   }
 
@@ -1702,5 +1703,84 @@ html {
     margin: 20px 0;
     font-size: 16px;
     color: rgba($textLight, 0.8);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .footer {
+    font-size: 16px; /* Уменьшим размер шрифта для мобильных устройств */
+  }
+
+  .footer__inner__nav,
+  .footer__inner__tg,
+  .footer__social,
+  .footer__contacts {
+    margin-bottom: 20px; /* Добавим отступ между блоками */
+  }
+
+  .footer__social__box {
+    margin-top: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer__social__link + .footer__social__link {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .footer__social__text {
+    display: none;
+  }
+
+  .footer__bottom {
+    text-align: center; /* Выровняем текст по центру */
+  }
+}
+
+@media only screen and (max-width: 855px) {
+  .footer__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer__inner__tg__box {
+    grid-template-columns: repeat(2, 100px);
+  }
+
+  .footer__inner__tg__link {
+    display: block;
+    margin: 5px auto;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .footer {
+    font-size: 14px;
+  }
+
+  .footer__inner__tg__box {
+    grid-template-columns: repeat(2, 50px);
+  }
+
+  .footer__inner__tg__box__img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .footer__social__box {
+    margin-top: 15px;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer__social__link + .footer__social__link {
+    margin-left: 15px;
+    margin-top: 0;
+  }
+  
+
+  .footer__social__text {
+    display: block;
   }
 }
