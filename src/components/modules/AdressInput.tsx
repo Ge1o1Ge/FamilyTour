@@ -5,22 +5,28 @@ const AddressInput: React.FC<AddressInputProps> = ({ id }) => {
   const [address, setAddress] = useState<string>('');
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isActive, setIsActive] = useState<boolean>(false);
+  let timeout: NodeJS.Timeout | null = null;
 
   const handleInputChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setAddress(value);
 
-    // Запрос к Nominatim API для получения подсказок по введенному адресу
-    try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=краснодарский край ${value}`
-      );
-      const data = await response.json();
-      const addresses: string[] = data.map((item: any) => item.display_name);
-      setSuggestions(addresses);
-    } catch (error) {
-      console.error('Ошибка при получении подсказок:', error);
+    if (timeout) {
+      clearTimeout(timeout);
     }
+
+    timeout = setTimeout(async () => {
+      try {
+        const response = await fetch(
+          `https://nominatim.openstreetmap.org/search?format=json&q=краснодарский край ${value}`
+        );
+        const data = await response.json();
+        const addresses: string[] = data.map((item: any) => item.display_name);
+        setSuggestions(addresses);
+      } catch (error) {
+        console.error('Ошибка при получении подсказок:', error);
+      }
+    }, 500);
   };
 
   const handleInputFocus = () => {
@@ -34,7 +40,6 @@ const AddressInput: React.FC<AddressInputProps> = ({ id }) => {
   const handleSelectAddress = (selectedAddress: string) => {
     setAddress(selectedAddress);
     setSuggestions([]);
-    // Действия при выборе адреса из подсказок, например, обновление карты
   };
 
   return (
