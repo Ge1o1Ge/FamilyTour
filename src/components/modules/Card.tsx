@@ -41,9 +41,9 @@ const Card = ({
         src={card.img[0]}
         alt={card.name}
       />
-      <h5 className={`${className ? `${className}__card__title` : ''} card__tittle`}>
+      <p className={`${className ? `${className}__card__title` : ''} card__tittle`}>
         {card.name}
-      </h5>
+      </p>
       <div
         className={`${className ? `${className}__card__buttons` : ''} card__buttons`}
       >

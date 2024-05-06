@@ -5,8 +5,11 @@ import VipTours from './components/VipTours';
 import Transfers from './components/Transfers';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
+import { useMediaQuery } from './assets/hooks/useMediaQuery';
 
 const App = () => {
+  const isMedia880 = useMediaQuery(880);
+
   return (
     <BrowserRouter>
       <div className="main">
@@ -28,7 +31,7 @@ const App = () => {
           <VipTours />
         </div>
         <div className="sea__background">
-          <span className="sea__background__top"></span>
+          {!isMedia880 && <span className="sea__background__top"></span>}
           <Sea />
         </div>
         <div className="hotels__background">

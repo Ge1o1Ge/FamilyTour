@@ -3,10 +3,12 @@ import { SectionWrapper } from '../hoc';
 import AddressInput from './modules/AdressInput';
 import VerticalCarousel from './modules/VerticalCarousel';
 import TransfersSlider from './modules/TransfersCarCarousel';
+import { useMediaQuery } from '../assets/hooks/useMediaQuery';
 
 const Transfers = () => {
   const [placeholderDate, setPlaceholderDate] = useState('');
   const [isBackDate, setIsBackDate] = useState(false);
+  const isMedia470 = useMediaQuery(470);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -37,41 +39,47 @@ const Transfers = () => {
           <div className="transfers__form__fields">
             <p className="transfers__form__text">Даты трансфера</p>
             <div className="transfers__form__fields__dates">
-              <label htmlFor="transfers__form__input__date1">Туда:</label>
-              <input
-                id="transfers__form__input__date1"
-                type="date"
-                defaultValue={placeholderDate}
-                min={placeholderDate}
-              />
-              <input
-                id="transfers__form__input__time1"
-                className="transfers__form__input__time"
-                type="time"
-                defaultValue="22:00"
-              />
-              <label htmlFor="transfers__form__input__date2">Обратно:</label>
-              <input
-                type="checkbox"
-                checked={isBackDate}
-                onChange={handleIsBackDate}
-              />
-              {isBackDate && (
-                <>
-                  <input
-                    id="transfers__form__input__date2"
-                    type="date"
-                    defaultValue={placeholderDate}
-                    min={placeholderDate}
-                  />
-                  <input
-                    id="transfers__form__input__time2"
-                    type="time"
-                    className="transfers__form__input__time"
-                    defaultValue="22:00"
-                  />
-                </>
-              )}
+              <div className="transfers__form__fields__dates__first">
+                <label htmlFor="transfers__form__input__date1">Туда:</label>
+                <input
+                  id="transfers__form__input__date1"
+                  type="date"
+                  defaultValue={placeholderDate}
+                  min={placeholderDate}
+                />
+                <label htmlFor="transfers__form__input__time1" style={{display: 'none'}}>Время поодачи туда:</label>
+                <input
+                  id="transfers__form__input__time1"
+                  className="transfers__form__input__time"
+                  type="time"
+                  defaultValue="22:00"
+                />
+              </div>
+              <div className="transfers__form__fields__dates__first">
+                <label htmlFor="transfers__form__input__date2">Обратно:</label>
+                <input
+                  type="checkbox"
+                  checked={isBackDate}
+                  onChange={handleIsBackDate}
+                />
+                {isBackDate && (
+                  <>
+                    <input
+                      id="transfers__form__input__date2"
+                      type="date"
+                      defaultValue={placeholderDate}
+                      min={placeholderDate}
+                    />
+                    <label htmlFor="transfers__form__input__time2" style={{display: 'none'}}>Время поодачи обратно:</label>
+                    <input
+                      id="transfers__form__input__time2"
+                      type="time"
+                      className="transfers__form__input__time"
+                      defaultValue="22:00"
+                    />
+                  </>
+                )}
+              </div>
             </div>
             <div className="transfers__form__fields__places">
               <div>
@@ -140,9 +148,11 @@ const Transfers = () => {
           <button className="transfers__form__submit">Заказать трансфер</button>
         </div>
       </form>
-      <div className="transfers__form__slider">
-          <TransfersSlider/>
+      {!isMedia470 && (
+        <div className="transfers__form__slider">
+          <TransfersSlider />
         </div>
+      )}
     </div>
   );
 };

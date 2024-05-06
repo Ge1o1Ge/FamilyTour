@@ -112,12 +112,16 @@ html {
 
 .card {
   max-width: 295px;
-  height: 440px;
+  height: 450px;
+  min-width: 295px;
   margin: 0 20px 0 0;
   background-color: #313131;
   border-radius: 15px;
   padding: 16px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &__price {
     position: absolute;
@@ -162,6 +166,7 @@ html {
     text-align: center;
     text-transform: uppercase;
     margin-top: 5px;
+    font-size: 18px;
   }
 
   &__buttons {
@@ -197,6 +202,27 @@ html {
     background-color: $blue;
     border: none;
     border-radius: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .slider {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .card {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .excurs__text {
+    max-width: 80%;
+  }
+
+  .card__buttons {
+    font-size: 14px;
   }
 }
 
@@ -240,11 +266,14 @@ html {
 
   &__logo__img {
     height: 100px;
+    max-width: 100%; /* Чтобы логотип не выходил за пределы родительского контейнера */
   }
 
   &__social {
-    width: 25vw;
+    flex: 1; /* Растягиваем блок соцсетей на всю доступную ширину */
     display: flex;
+    justify-content: flex-start; /* Располагаем их справа */
+    align-items: center; /* Центрируем вертикально */
   }
 
   &__social__link__img {
@@ -252,10 +281,9 @@ html {
   }
 
   &__phone {
-    position: relative;
     padding: 15px 0px 15px 20px;
     border-radius: 15px;
-    width: 25vw;
+    flex: 1; /* Растягиваем блок с номером телефона на всю доступную ширину */
     display: flex;
     flex-direction: column;
     text-align: end;
@@ -287,8 +315,82 @@ html {
     text-decoration: none;
   }
 
-  &__social__link {
-    margin-right: 20px;
+  &__social__link + &__social__link {
+    margin-left: 20px;
+  }
+}
+
+/* Медиазапрос для мобильных устройств */
+@media only screen and (max-width: 768px) {
+  .header {
+    height: auto;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header__logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .header__social,
+  .header__phone {
+    width: 100%;
+    margin-bottom: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header__social {
+    margin-top: 5px;
+    order: 1;
+  }
+
+  .header__phone {
+    font-size: 18px;
+    padding-top: 0;
+    order: 2;
+    margin-bottom: 0;
+  }
+
+  .header__phone__link {
+    justify-content: center;
+  }
+
+  .header__phone__link__img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .header__background__left,
+  .header__background__right {
+    display: none; /* TODO Скрываем задние изображения на мобильных устройствах TODO MediaQuery */
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header__social {
+    margin-bottom: 5px;
+  }
+
+  .header__logo__img {
+    height: 70px;
+  }
+
+  .header__social__link__img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .header__phone {
+    padding-left: 0;
+    font-size: 14px;
   }
 }
 
@@ -352,6 +454,7 @@ html {
     width: 45vw;
     height: 70vh;
     object-fit: cover;
+    object-position: center;
   }
 
   &__slider__controller {
@@ -449,6 +552,59 @@ html {
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  .hero__nav__link {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding-bottom: 50px;
+  }
+
+  .hero__box {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .hero__box {
+    margin-top: 20px;
+  }
+
+  .hero__slider {
+    width: 100%;
+  }
+
+  .hero__slider__box {
+    padding: 0;
+  }
+
+  .hero__slider__img {
+    width: calc(100vw - 40px);
+    height: 70vh;
+    object-fit: cover;
+  }
+
+  .hero__namer {
+    width: calc(100vw - 40px);
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .hero__namer__header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__namer__line {
+    display: none;
+  }
+}
+
 .excurs {
   z-index: 3;
   @extend %text-font;
@@ -501,7 +657,7 @@ html {
 
   &__text {
     font-size: 16px;
-    max-width: 650px;
+    max-width: min(650px, 50vw);
     margin-top: 25px;
     font-weight: normal;
   }
@@ -513,6 +669,22 @@ html {
 
   &__slider__dote--active::before {
     background-color: $darkEls;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .excurs__title {
+    font-size: 50px;
+  }
+
+  .excurs__text {
+    max-width: 60%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .excurs__text {
+    max-width: 80%;
   }
 }
 
@@ -570,6 +742,13 @@ html {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .vip-tours__title {
+    margin-top: 20px;
+    font-size: 50px;
+  }
+}
+
 .sea {
   margin-top: 20px;
   z-index: 3;
@@ -588,7 +767,7 @@ html {
   &__background__top {
     position: absolute;
     top: 8%;
-    left: 2%;
+    right: 2%;
     height: 200px;
     width: 200px;
     background-image: url('../assets/birds.png');
@@ -625,6 +804,7 @@ html {
     flex-wrap: wrap;
     width: 100%;
     gap: 20px;
+    justify-content: center;
   }
 
   &__card {
@@ -649,6 +829,55 @@ html {
 
   &__card__buttons {
     justify-content: end;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .sea__card:first-child {
+    max-width: calc(50% - 20px);
+    width: calc(50% - 20px);
+  }
+
+  .sea__card:last-child {
+    max-width: calc(50% - 20px);
+    width: calc(50% - 20px);
+  }
+
+  .sea__card {
+    max-width: calc(50% - 20px);
+    width: calc(50% - 20px);
+    min-width: 295px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sea__title {
+    margin-top: 20px;
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .sea__card:first-child {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .sea__card:last-child {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .sea__card {
+    max-width: 100%;
+    width: 100%;
+    min-width: 295px;
+    height: auto;
+  }
+  .sea {
+    .card__img {
+      height: 200px;
+    }
   }
 }
 
@@ -723,6 +952,20 @@ html {
 
   &__card__buttons {
     justify-content: end;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hotels__title {
+    margin-top: 20px;
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .hotels__title {
+    margin-top: 20px;
+    font-size: 35px;
   }
 }
 
@@ -849,6 +1092,14 @@ html {
     display: flex;
     align-items: center;
     position: relative;
+    flex-wrap: wrap;
+  }
+
+  &__form__fields__dates__first,
+  &__form__fields__dates__second {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   &__form__input__time {
@@ -863,6 +1114,7 @@ html {
 
   &__form__input__from__location {
     width: 100%;
+    margin: 10px 0 !important;
   }
 
   &__form__input__from__location__box {
@@ -1056,7 +1308,7 @@ html {
       width: 16%;
       margin: 0 1%;
       transition-property: top, left, width, height, transform, padding-left,
-        color, border, background-color;
+        bottom, color, border, background-color;
       transition-duration: 0.9s;
       transition-timing-function: ease;
       opacity: 1;
@@ -1122,6 +1374,140 @@ html {
   }
 }
 
+@media only screen and (max-width: 1150px) {
+  .transfers__form__left {
+    max-width: calc(70% - 20px);
+    margin-right: 20px;
+  }
+
+  .transfers__form__fields__contacts {
+    justify-content: start;
+    max-width: 70%;
+  }
+
+  .transfers__form__submit {
+    width: auto;
+  }
+
+  .transfers__form__right {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .transfers__form {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .transfers__form {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .transfers__form__input__time {
+    position: relative;
+    left: 0;
+  }
+
+  .transfers #transfers__form__input__time2 {
+    left: 0;
+  }
+
+  .transfers__form__left {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .transfers__form {
+    flex-wrap: wrap;
+  }
+
+  .transfers__form__right {
+    width: 100%;
+    max-width: 100%;
+  }
+  .transfers {
+    .car__carousel-item {
+      width: 23%;
+    }
+
+    .car__carousel-item.order__3 {
+      bottom: 160px;
+      height: auto;
+      transform: translateX(20%);
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .transfers {
+    .car__carousel-item {
+      padding: 3px;
+      font-size: 13px;
+      height: auto;
+    }
+
+    .car__carousel-item__title {
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .car__carousel-item__text {
+      text-align: center;
+    }
+
+    .car__carousel-item__img {
+      height: 70px;
+    }
+
+    .car__carousel-item__text__description {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .transfers__form {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .transfers__form__right {
+    width: 300px;
+    max-width: 300px;
+  }
+
+  .transfers__form__submit {
+    display: block;
+    margin: 400px auto 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .transfers__form__fields__dates__first,
+  .transfers__form__fields__dates__second {
+    max-width: 280px;
+  }
+
+  .transfers__form__input__time {
+    margin-left: 40px !important;
+  }
+
+  .transfers__form__fields__contacts {
+    flex-wrap: wrap;
+  }
+
+  .transfers__form__fields__contacts div {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+
 .reviews {
   z-index: 3;
   @extend %text-font;
@@ -1147,7 +1533,7 @@ html {
   }
 
   &__slider__card {
-    width: 370px !important;
+    width: 310px !important;
     height: 214px;
     margin-right: 20px;
     padding: 10px 15px;
@@ -1188,6 +1574,18 @@ html {
     margin-bottom: 15px;
     font-size: 14px;
     color: rgba($blue, 1);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews__title {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .reviews__slider__card {
+    margin: 0 calc(50% - 155px);
   }
 }
 

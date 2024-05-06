@@ -4,6 +4,7 @@ import { CardInterface } from '../../../types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Card from './Card';
+import { useMediaQuery } from '../../assets/hooks/useMediaQuery';
 
 const CardsSlider = ({
   cards,
@@ -14,6 +15,7 @@ const CardsSlider = ({
 }) => {
   const sliderRef = useRef<Slider>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const isMedia600 = useMediaQuery(600);
 
   const settings = {
     dots: false,
@@ -21,7 +23,7 @@ const CardsSlider = ({
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: false,
+    centerMode: isMedia600,
     initialSlide: 0,
     centerPadding: '0',
     variableWidth: true,
