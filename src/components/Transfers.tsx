@@ -47,7 +47,12 @@ const Transfers = () => {
                   defaultValue={placeholderDate}
                   min={placeholderDate}
                 />
-                <label htmlFor="transfers__form__input__time1" style={{display: 'none'}}>Время поодачи туда:</label>
+                <label
+                  htmlFor="transfers__form__input__time1"
+                  style={{ display: 'none' }}
+                >
+                  Время поодачи туда:
+                </label>
                 <input
                   id="transfers__form__input__time1"
                   className="transfers__form__input__time"
@@ -58,6 +63,7 @@ const Transfers = () => {
               <div className="transfers__form__fields__dates__first">
                 <label htmlFor="transfers__form__input__date2">Обратно:</label>
                 <input
+                  id="transfers__form__input__date2"
                   type="checkbox"
                   checked={isBackDate}
                   onChange={handleIsBackDate}
@@ -65,12 +71,16 @@ const Transfers = () => {
                 {isBackDate && (
                   <>
                     <input
-                      id="transfers__form__input__date2"
                       type="date"
                       defaultValue={placeholderDate}
                       min={placeholderDate}
                     />
-                    <label htmlFor="transfers__form__input__time2" style={{display: 'none'}}>Время поодачи обратно:</label>
+                    <label
+                      htmlFor="transfers__form__input__time2"
+                      style={{ display: 'none' }}
+                    >
+                      Время поодачи обратно:
+                    </label>
                     <input
                       id="transfers__form__input__time2"
                       type="time"

@@ -7,7 +7,7 @@ const Sea = () => {
   return (
     <div className="sea">
       <div className="sea__description">
-        <h2 className="sea__title">Море</h2>
+        <h2 className="sea__title">Выход в Море</h2>
         <p className="sea__text">
           Окунитесь в атмосферу Черного моря с нашими роскошными морскими
           услугами! Откройте для себя уникальные прелести морских прогулок,

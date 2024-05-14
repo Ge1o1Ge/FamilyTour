@@ -6,9 +6,39 @@ import Transfers from './components/Transfers';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
 import { useMediaQuery } from './assets/hooks/useMediaQuery';
+import { $QickViewModal, closeQickViewModal } from './context/modals';
+import { useUnit } from 'effector-react';
+import Popup from './components/modules/Popup';
+import { useEffect, useRef } from 'react';
+import { removeOverflowHiddenFromBody } from './utils/common';
 
 const App = () => {
   const isMedia880 = useMediaQuery(880);
+  const quickViewIsOpen = useUnit($QickViewModal);
+
+  const popupRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        quickViewIsOpen &&
+        popupRef.current &&
+        !(
+          popupRef.current === e.target ||
+          popupRef.current.contains(e.target as Node)
+        )
+      ) {
+        removeOverflowHiddenFromBody()
+        closeQickViewModal();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [quickViewIsOpen]);
 
   return (
     <BrowserRouter>
@@ -52,6 +82,13 @@ const App = () => {
         <div className="footer__background">
           <Footer />
         </div>
+        {quickViewIsOpen && (
+          <div className="modal-opened">
+            <div ref={popupRef}>
+              <Popup />
+            </div>
+          </div>
+        )}
       </div>
     </BrowserRouter>
   );

@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import { ReviewesInfoI } from '../../../types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { star } from '../../assets';
+import { arrows, star } from '../../assets';
 import { useMediaQuery } from '../../assets/hooks/useMediaQuery';
 
 const CardsSlider = ({
@@ -78,7 +78,7 @@ const CardsSlider = ({
           className={`${styleName}__slider__button slider__button ${styleName}__slider__button__left slider__button__left`}
           onClick={() => sliderRef.current?.slickPrev()}
         >
-          {`<`}
+          <img src={arrows.left} alt="предыдущий слайд" />
         </button>
         <p className={`${styleName}__slider__dotes slider__dotes`}>
           {cards.map((_img, i) => (
@@ -92,7 +92,7 @@ const CardsSlider = ({
           className={`${styleName}__slider__button slider__button ${styleName}__slider__button__right slider__button__right`}
           onClick={() => sliderRef.current?.slickNext()}
         >
-          {`>`}
+          <img src={arrows.right} alt="следующий слайд" />
         </button>
       </div>
     </>

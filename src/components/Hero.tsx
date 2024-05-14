@@ -21,7 +21,7 @@ const Hero = () => {
       </nav>
       <div className="hero__box">
         <div className="hero__slider">
-          <MainSlider images={[slides.slide1, slides.slide1]}/> 
+          <MainSlider images={slides}/> 
         </div>
         <div className="hero__namer">
           <h1 className="hero__namer__header">

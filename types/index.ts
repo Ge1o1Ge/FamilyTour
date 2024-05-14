@@ -1,8 +1,14 @@
 export interface CardInterface {
   id: number;
   name: string;
+  semiName?:string;
   order: string;
-  description: string;
+  description: {
+    info: string;
+    marshrut: string[];
+    dopUslugi: string[];
+    time: string;
+  };
   img: string[];
   isHit: boolean;
   isNew: boolean;
@@ -31,3 +37,9 @@ export interface ReviewesInfoI {
   timeTag: string;
   stars: number;
 }
+
+export interface IWrappedComponentProps {
+  open: boolean
+  setOpen: (open: boolean) => void
+}
+
