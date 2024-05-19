@@ -4,11 +4,11 @@ import { useTransfersInfo, useTransfersSelectedItem } from '../../assets/hooks/u
 import { setSelectedItemTransfers, setTranfersInfo } from '../../context/transfersInfo';
 
 const VerticalCarousel = () => {
-  const { tranfersInfo } = useTransfersInfo(); // Используем глобальный контекст и событие для обновления данных
+  const { tranfersInfo } = useTransfersInfo();
   const { transfersSelectedItem } = useTransfersSelectedItem();
 
   const handleItemClick = (itemId: number) => {
-    const updatedMenuItems = [...tranfersInfo]; // Используем данные из глобального контекста
+    const updatedMenuItems = [...tranfersInfo];
     const distance = transfersSelectedItem - itemId;
 
     updatedMenuItems.forEach((item) => {
@@ -32,7 +32,7 @@ const VerticalCarousel = () => {
         updatedItem.invisible = false;
         return updatedItem;
       });
-      setTranfersInfo(resetVisibilityMenuItems); // Обновляем данные в глобальном контексте с помощью события
+      setTranfersInfo(resetVisibilityMenuItems);
     }, 500);
   };
 
@@ -42,7 +42,7 @@ const VerticalCarousel = () => {
       updatedItem.invisible = false;
       return updatedItem;
     });
-    setTranfersInfo(resetVisibilityMenuItems); // Обновляем глобальный контекст
+    setTranfersInfo(resetVisibilityMenuItems);
   }, [setTranfersInfo]);
 
   return (

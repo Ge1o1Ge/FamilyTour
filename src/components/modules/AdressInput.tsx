@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
 import { AddressInputProps } from '../../../types';
 
-const AddressInput: React.FC<AddressInputProps> = ({ id }) => {
+const AddressInput: React.FC<AddressInputProps> = ({ id, name }) => {
   const [address, setAddress] = useState<string>('');
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -48,6 +48,8 @@ const AddressInput: React.FC<AddressInputProps> = ({ id }) => {
         type="text"
         value={address}
         id={id}
+        name={name}
+        required
         className="transfers__form__input__from__location"
         onChange={handleInputChange}
         onFocus={handleInputFocus}

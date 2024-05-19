@@ -22,13 +22,43 @@ const PopupContent = ({ card }: { card: CardInterface }) => {
         />
       </div>
       <div className="popup__right">
-        <p className="popup__right__text popup__right__title">{card.name}</p>
-        <p className="popup__right__text">{card.description.info}</p>
-        {card.startPrice !== '0' && (
-          <p className="popup__right__text popup__right__price">
-            {card.startPrice}
-          </p>
+        <p className="popup__right__title">{card.name}</p>
+        <p className="popup__right__description">{card.description.info}</p>
+        {card.description.marshrut.length > 0 && (
+          <div className="popup__right__section">
+            <p className="popup__right__section__title">Маршрут:</p>
+            <ul className="popup__right__list">
+              {card.description.marshrut.map((item, index) => (
+                <li key={index} className="popup__right__list__item">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
+        <p className="popup__right__time">
+          Расписание: {card.description.time}
+        </p>
+        {card.description.dopUslugi.length > 0 && (
+          <div className="popup__right__section">
+            <p className="popup__right__section__title">
+              Дополнительные услуги:
+            </p>
+            <ul className="popup__right__list">
+              {card.description.dopUslugi.map((item, index) => (
+                <li key={index} className="popup__right__list__item">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div className="popup__order__box">
+        {card.startPrice !== '0' && (
+          <p className="popup__right__price">Цена от {card.startPrice}</p>
+        )}
+          <button className={`popup__order card__order`}>Забронировать</button>
+        </div>
       </div>
     </div>
   );

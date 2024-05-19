@@ -27,6 +27,7 @@ export interface TransfersInterface {
 
 export interface AddressInputProps {
   id: string;
+  name: string;
 }
 
 export interface ReviewesInfoI {

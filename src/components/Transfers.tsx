@@ -1,13 +1,21 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
+import emailjs from 'emailjs-com';
 import { SectionWrapper } from '../hoc';
 import AddressInput from './modules/AdressInput';
 import VerticalCarousel from './modules/VerticalCarousel';
 import TransfersSlider from './modules/TransfersCarCarousel';
 import { useMediaQuery } from '../assets/hooks/useMediaQuery';
+import {
+  useTransfersInfo,
+  useTransfersSelectedItem,
+} from '../assets/hooks/useTransfersInfo';
 
 const Transfers = () => {
   const [placeholderDate, setPlaceholderDate] = useState('');
   const [isBackDate, setIsBackDate] = useState(false);
+  const { tranfersInfo } = useTransfersInfo();
+  const { transfersSelectedItem } = useTransfersSelectedItem();
+
   const isMedia470 = useMediaQuery(470);
 
   useEffect(() => {
@@ -20,12 +28,62 @@ const Transfers = () => {
     setIsBackDate(!isBackDate);
   };
 
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+
+    const form = event.target as HTMLFormElement;
+
+    const formData = {
+      from: (form.elements.namedItem('from') as HTMLInputElement).value,
+      to: (form.elements.namedItem('to') as HTMLInputElement).value,
+      date1: (form.elements.namedItem('date1') as HTMLInputElement).value,
+      time1: (form.elements.namedItem('time1') as HTMLInputElement).value,
+      date2: isBackDate
+        ? (form.elements.namedItem('date2') as HTMLInputElement).value
+        : 'нет',
+      time2: isBackDate
+        ? (form.elements.namedItem('time2') as HTMLInputElement).value
+        : 'нет',
+      passangers: (form.elements.namedItem('passangers') as HTMLInputElement)
+        .value,
+      childSeat: (form.elements.namedItem('childSeat') as HTMLInputElement)
+        .checked
+        ? 'да'
+        : 'нет',
+      baggage: (form.elements.namedItem('baggage') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      tarif:
+        tranfersInfo.find((item) => item.id === transfersSelectedItem)?.name ||
+        null,
+    };
+
+    emailjs
+      .send(
+        'service_8php494',
+        'template_83xnnhu',
+        formData,
+        'fZ2o5KI6oXO0xXrfz'
+      )
+      .then(
+        (_result) => {
+          alert('Заявка отправлена успешно!');
+        },
+        (_error) => {
+          alert('Произошла ошибка при отправке заявки.');
+        }
+      );
+  };
+
   return (
     <div className="transfers">
       <div className="transfers__description section">
         <h2 className="transfers__title">Трансфер</h2>
       </div>
-      <form className="transfers__inner transfers__form section">
+      <form
+        className="transfers__inner transfers__form section"
+        onSubmit={handleSubmit}
+      >
         <div className="transfers__form__left">
           <p className="transfers__text">
             Опытные водители на комфортабельных автомобилях готовы доставить вас
@@ -40,30 +98,32 @@ const Transfers = () => {
             <p className="transfers__form__text">Даты трансфера</p>
             <div className="transfers__form__fields__dates">
               <div className="transfers__form__fields__dates__first">
-                <label htmlFor="transfers__form__input__date1">Туда:</label>
+                <label htmlFor="date1">Туда:</label>
                 <input
-                  id="transfers__form__input__date1"
+                  id="date1"
+                  name="date1"
                   type="date"
+                  required
                   defaultValue={placeholderDate}
                   min={placeholderDate}
                 />
-                <label
-                  htmlFor="transfers__form__input__time1"
-                  style={{ display: 'none' }}
-                >
+                <label htmlFor="time1" style={{ display: 'none' }}>
                   Время поодачи туда:
                 </label>
                 <input
-                  id="transfers__form__input__time1"
+                  id="time1"
+                  name="time1"
+                  required
                   className="transfers__form__input__time"
                   type="time"
                   defaultValue="22:00"
                 />
               </div>
               <div className="transfers__form__fields__dates__first">
-                <label htmlFor="transfers__form__input__date2">Обратно:</label>
+                <label htmlFor="backDate">Обратно:</label>
                 <input
-                  id="transfers__form__input__date2"
+                  id="backDate"
+                  name="backDate"
                   type="checkbox"
                   checked={isBackDate}
                   onChange={handleIsBackDate}
@@ -71,18 +131,18 @@ const Transfers = () => {
                 {isBackDate && (
                   <>
                     <input
+                      id="date2"
+                      name="date2"
                       type="date"
                       defaultValue={placeholderDate}
                       min={placeholderDate}
                     />
-                    <label
-                      htmlFor="transfers__form__input__time2"
-                      style={{ display: 'none' }}
-                    >
+                    <label htmlFor="time2" style={{ display: 'none' }}>
                       Время поодачи обратно:
                     </label>
                     <input
-                      id="transfers__form__input__time2"
+                      id="time2"
+                      name="time2"
                       type="time"
                       className="transfers__form__input__time"
                       defaultValue="22:00"
@@ -93,39 +153,32 @@ const Transfers = () => {
             </div>
             <div className="transfers__form__fields__places">
               <div>
-                <label htmlFor="transfers__form__input__from">
-                  Откуда забрать:
-                </label>
-                <AddressInput id="transfers__form__input__from" />
+                <label htmlFor="from">Откуда забрать:</label>
+                <AddressInput id="from" name="from" />
               </div>
               <div>
-                <label htmlFor="transfers__form__input__to">
-                  Куда доставить:
-                </label>
-                <AddressInput id="transfers__form__input__to" />
+                <label htmlFor="to">Куда доставить:</label>
+                <AddressInput id="to" name="to" />
               </div>
             </div>
             <div className="transfers__form__fields__details">
               <div className="transfers__form__fields__details__box">
-                <label htmlFor="transfers__form__input__passangers">
-                  Кол-во пассажиров:
-                </label>
+                <label htmlFor="passangers">Кол-во пассажиров:</label>
                 <input
-                  id="transfers__form__input__passangers"
+                  id="passangers"
+                  name="passangers"
                   type="number"
                   placeholder="1"
+                  required
                   min="1"
                 />
-                <label htmlFor="transfers__form__input__child">
-                  Детское кресло:
-                </label>
-                <input type="checkbox" id="transfers__form__input__child" />
+                <label htmlFor="childSeat">Детское кресло:</label>
+                <input type="checkbox" id="childSeat" name="childSeat" />
               </div>
-              <label htmlFor="transfers__form__input__baggadge">
-                Чемоданы:
-              </label>
+              <label htmlFor="baggage">Чемоданы:</label>
               <input
-                id="transfers__form__input__baggadge"
+                id="baggage"
+                name="baggage"
                 type="number"
                 placeholder="0"
                 min="0"
@@ -133,18 +186,22 @@ const Transfers = () => {
             </div>
             <div className="transfers__form__fields__contacts">
               <div>
-                <label htmlFor="transfers__form__input__phone">Телефон:</label>
+                <label htmlFor="phone">Телефон:</label>
                 <input
-                  id="transfers__form__input__phone"
+                  id="phone"
+                  name="phone"
                   type="text"
+                  required
                   placeholder="+7-911-123-45-67"
                   pattern="\+\d{1,3}-\d{3}-\d{3}-\d{2}-\d{2}"
                 />
               </div>
               <div>
-                <label htmlFor="transfers__form__input__name">Имя:</label>
+                <label htmlFor="name">Имя:</label>
                 <input
-                  id="transfers__form__input__name"
+                  id="name"
+                  name="name"
+                  required
                   type="text"
                   placeholder="Петр Иванович"
                 />
@@ -155,7 +212,9 @@ const Transfers = () => {
         <div className="transfers__form__right">
           <h2 className="transfers__form__title">Выбор тарифа</h2>
           <VerticalCarousel />
-          <button className="transfers__form__submit">Заказать трансфер</button>
+          <button type="submit" className="transfers__form__submit">
+            Заказать трансфер
+          </button>
         </div>
       </form>
       {!isMedia470 && (
