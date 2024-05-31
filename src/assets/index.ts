@@ -13,6 +13,7 @@ import arrowLeft from './arrow-left.svg';
 import arrowRight from './arrow-right.svg';
 import closeImg from './close.svg';
 import star from './star.svg';
+import menuIcon from './icon_menu.svg';
 
 import bisnesCar from './transfers/bisnes.png';
 import busCar from './transfers/bus.png';
@@ -88,6 +89,7 @@ export {
   seaSafary,
   seaFish,
   seaYachtArenda,
+  menuIcon,
 };
 
 export const arrows = {

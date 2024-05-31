@@ -94,5 +94,5 @@ const Footer = () => {
   );
 };
 
-const headerWrapped = SectionWrapper(Footer, 'footer__section');
+const headerWrapped = SectionWrapper(Footer, 'contacts');
 export default headerWrapped;

@@ -19,5 +19,5 @@ const Reviews = () => {
   );
 };
 
-const VipToursWrapped = SectionWrapper(Reviews, 'vipTours', false);
+const VipToursWrapped = SectionWrapper(Reviews, 'reviews', false);
 export default VipToursWrapped;

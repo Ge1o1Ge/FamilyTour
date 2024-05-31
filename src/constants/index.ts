@@ -77,7 +77,7 @@ export const menuLinks = [
   },
   {
     name: 'Отзывы',
-    link: '#reviwes',
+    link: '#reviews',
   },
   {
     name: 'Контакты',
