@@ -1,8 +1,5 @@
 import Hero from './Hero';
 import Header from './Header';
-import Excurs from './Excurs';
-import Sea from './Sea';
-import Hotels from './Hotels';
-import Transfers from './Transfers';
+import Footer from './Footer';
 
-export { Hero, Header, Excurs, Sea, Hotels, Transfers };
+export { Hero, Header, Footer };
