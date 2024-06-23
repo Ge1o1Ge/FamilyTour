@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  @extend %text-font;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
@@ -86,7 +86,6 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgba($blue, 1);
 }
 
-
 header {
   padding: 1px;
 }
@@ -147,14 +146,15 @@ input[type='number'] {
   min-height: 100vh;
 }
 
-.header, .footer {
+.header,
+.footer {
+  padding: 10px;
   width: 100%;
   background-color: $elements;
   color: rgba($textDark, 1);
 
   .nav {
-    text-transform: uppercase;
-    padding: 5px 50px;
+    padding: 5px 0px;
     display: flex;
     justify-content: space-between;
   }
@@ -162,6 +162,11 @@ input[type='number'] {
   .nav__logo {
     display: flex;
     align-items: center;
+  }
+
+  .nav__logo__text {
+    margin-left: 5px;
+    @extend %logo-font;
   }
 
   .nav__logo-img {
@@ -196,76 +201,25 @@ input[type='number'] {
     margin-left: 4rem;
   }
 
-  .nav__lang-item {
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: rgba($textDark, 0.8);
-  }
-
   .nav__item + .nav__item {
     margin-left: 2.6em;
   }
 
-  .nav__lang-link:active,
-  .nav__lang-link:focus,
-  .nav__lang-link:hover {
-    color: $textDark;
-  }
-
-  .nav__lang-item:active,
-  .nav__lang-item:focus,
-  .nav__lang-item:hover {
-    background-color: rgba($textLight, 0.7);
-  }
-
-  .nav__lang-item--active {
-    background-color: $blue;
-    pointer-events: none;
-  }
-
-  .nav__lang-item--active .nav__lang-link {
-    color: $textDark;
-  }
-
-  .nav__lang-link {
-    font-weight: 700;
-    padding: 0.6em;
-    font-size: 1rem;
-    color: $textLight;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: 0.4s ease-in-out;
-    cursor: pointer;
-  }
-
   .nav__link {
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
     transition: 0.4s ease-in-out;
+    font-size: 1.5rem;
     cursor: pointer;
-    color: rgba($textLight, 0.8);
-    background-color: rgba($textDark, 0.8);
-    border-radius: 5px;
-    padding: 8px;
-    font-weight: 700;
+    color: rgba($textDark, 1);
   }
+
   .nav__link:active,
   .nav__link:focus,
   .nav__link:hover {
-    background-color: rgba($darkEls, 0.8);
-
     color: $blue;
   }
 
   .nav__link--active {
-    color: $textDark;
     pointer-events: none;
-    background-color: rgba($blue, 1);
-    border-radius: 5px;
     font-weight: 700;
   }
 }
@@ -274,3 +228,51 @@ input[type='number'] {
   margin-bottom: 0;
 }
 
+.home {
+  display: flex;
+  justify-content: space-between;
+
+  .info__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .home__title {
+    @extend %logo-font;
+    font-size: 4.5rem;
+    line-height: 1.55;
+  }
+
+  .home__subtitle {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    max-width: 400px;
+  }
+}
+
+.about {
+  padding: 0 10px;
+  .info__content {
+    max-width: 700px;
+    padding-right: 35px;
+  }
+
+  .about__title {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .about__subtitle {
+    margin-top: 30px;
+    font-size: 1.2rem;
+  }
+
+  .about__subtitle--first {
+    margin-bottom: 20px;
+  }
+
+  .about__text {
+    font-size: 1.2rem;
+  }
+}

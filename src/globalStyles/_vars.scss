@@ -33,7 +33,22 @@ $blue: #eb591d;
 %text-font {
   font-family: 'Montserrat', sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700;
+  font-size: 1rem;
   font-style: normal;
   color: #313131;
+}
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('../assets/fonts/TTHoves-DemiBold.woff2') format('woff2'),
+       url('../assets/fonts/TTHoves-DemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+%logo-font {
+  letter-spacing: 0.01rem;
+  font-family: "TT Hoves", sans-serif;
+  color: $textDark;
+  font-size: 1.7rem;
 }
