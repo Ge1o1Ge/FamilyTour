@@ -69,6 +69,10 @@ body {
   background-color: rgba($bgColor, 1);
 }
 
+main {
+  flex-grow: 1;
+}
+
 body::-webkit-scrollbar {
   width: 8px;
 }
