@@ -18,11 +18,11 @@ const Footer = () => {
           <ul className="nav__list">
             <li className="nav__item">
               <a className="nav__link" href="/about">
-                Почта
+                i.a.bogachev@roscherk.su
               </a>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="./contacts">
+              <a className="nav__link" href="/">
                 Политика конфиденциальности
               </a>
             </li>

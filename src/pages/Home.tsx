@@ -20,6 +20,14 @@ const MainPage = () => {
           />
         </div>
       </div>
+      <svg className="line" viewBox="0 0 500 200">
+        <path
+          d="M10,80 C150,150 350,0 490,100"
+          stroke="#ff5722"
+          strokeWidth="2"
+          fill="transparent"
+        />
+      </svg>
     </section>
   );
 };

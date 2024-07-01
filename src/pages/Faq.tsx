@@ -12,8 +12,8 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="faq-container">
-      <h2>FAQ</h2>
+    <div className="container faq-container">
+      <h2 className="faq-title">FAQ</h2>
       {faqData.map((item, index) => (
         <div key={index} className="faq-item">
           <div className="faq-question" onClick={() => handleToggle(index)}>

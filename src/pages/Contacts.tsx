@@ -1,39 +1,88 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './contacts.scss';
 
-const Contacts: React.FC = () => {
+const Contacts = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     setSubmitted(true);
   };
 
   return (
-    <div className="feedback-container">
+    <div className="feedback-container container">
       <div className="feedback-header">
-        <h2>Обратная связь</h2>
-        <p>Оставьте здесь отзывы, пожелания или проблемы</p>
+        <h2 className="feedback__title">Обратная связь</h2>
+        <p className="feedback__subtitle">
+          Оставьте здесь отзывы, пожелания или проблемы
+        </p>
       </div>
-      <form className="feedback-form" onSubmit={handleSubmit}>
-        <label>
-          Имя
-          <input type="text" name="name" required />
-        </label>
-        <label>
-          Электронная почта
-          <input type="email" name="email" required />
-        </label>
+      <form
+        id="form"
+        className="form feedback-form"
+        autoComplete="off"
+        data-lang="ru"
+        onSubmit={handleSubmit}
+      >
         {submitted ? (
           <div className="thank-you-message">Спасибо!</div>
         ) : (
           <>
-            <label>
-              Оставьте отзыв здесь
-              <textarea name="feedback" required></textarea>
-            </label>
-            <button type="submit">Отправить</button>
+            <div className="form-group form__field">
+              <input
+                type="text"
+                id="firstName"
+                className="form__input"
+                name="firstname"
+                autoComplete="off"
+                placeholder="Ваше имя"
+                required
+              />
+              <label className="form__label" htmlFor="firstName">
+                Имя
+              </label>
+            </div>
+            <div className="form-group form__field form__field--email">
+              <input
+                type="email"
+                required
+                id="email"
+                className="form__input"
+                name="email"
+                autoComplete="off"
+                placeholder="Email"
+              />
+              <label className="form__label" htmlFor="email">
+                Электронная почта
+              </label>
+            </div>
+            <div className="form-group form__field">
+              <textarea
+                required
+                className="form__textarea"
+                id="textarea"
+                name="message"
+                placeholder="Ваше сообщение"
+              ></textarea>
+              <label
+                className="form__label form__label--textarea"
+                htmlFor="textarea"
+              >
+                Ваше сообщение
+              </label>
+            </div>
+            <div className="form__warnings">
+              <p className="form__warnings-text please-wait"></p>
+              <p id="error" className="form__warnings-text error"></p>
+              <p className="form__warnings-text success"></p>
+            </div>
+            <button
+              className="form__button"
+              id="form__submit-button"
+              type="submit"
+            >
+              Отправить
+            </button>
           </>
         )}
       </form>
