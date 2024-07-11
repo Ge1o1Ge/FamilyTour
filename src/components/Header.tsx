@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import { SectionWrapper } from '../hoc';
 
 const header = () => {
   return (
     <header className="header section">
       <nav className="container nav">
-        <a href="/" className="nav__logo">
+        <Link to="/" className="nav__logo">
           <img
             className="nav__logo-img"
             src="/logo.png"
@@ -12,23 +13,23 @@ const header = () => {
             width="58"
             height="50"
           />
-        </a>
+        </Link>
         <div className="nav__menu">
           <ul className="nav__list">
             <li className="nav__item">
-              <a className="nav__link" href="/about">
+              <Link className="nav__link" to="/about">
                 О приложении
-              </a>
+              </Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="./contacts">
+              <Link className="nav__link" to="./contacts">
                 Обратная связь
-              </a>
+              </Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="./FAQ">
+              <Link className="nav__link" to="./FAQ">
                 FAQ
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

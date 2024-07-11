@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import { SectionWrapper } from '../hoc';
 
 const Footer = () => {
   return (
     <footer className="footer section">
       <nav className="container nav">
-        <a href="/" className="nav__logo">
+        <Link to="/" className="nav__logo">
           <img
             className="nav__logo-img"
             src="/logo.png"
@@ -13,7 +14,7 @@ const Footer = () => {
             height="50"
           />
           <span className="nav__logo__text">Росчерк</span>
-        </a>
+        </Link>
         <div className="nav__menu">
           <ul className="nav__list">
             <li className="nav__item">
@@ -22,9 +23,9 @@ const Footer = () => {
               </a>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="/">
+              <Link className="nav__link" to="/privacy">
                 Политика конфиденциальности
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
