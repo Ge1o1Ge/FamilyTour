@@ -24,7 +24,7 @@ const About = () => {
           <img
             className="about__image"
             id="image-banner"
-            src="./src/assets/phone-1.png"
+            src="/phone-1.png"
             alt="Изображение мобильного телефона"
             width="280"
             height="535"

@@ -7,7 +7,7 @@ const header = () => {
         <a href="/" className="nav__logo">
           <img
             className="nav__logo-img"
-            src="./src/assets/logo.png"
+            src="/logo.png"
             alt="Логотип компании АлтайЛесТрак"
             width="58"
             height="50"
