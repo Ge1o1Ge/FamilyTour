@@ -23,7 +23,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="nav__item">
-              <Link className="nav__link" to="/privacy">
+              <Link className="nav__link" to="/privacy-policy">
                 Политика конфиденциальности
               </Link>
             </li>

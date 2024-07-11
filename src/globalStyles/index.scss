@@ -353,7 +353,6 @@ input[type='number'] {
   .about {
     .info__content {
       padding-right: 0;
-      
     }
 
     .about__subtitle {
@@ -410,6 +409,19 @@ input[type='number'] {
 
   .line {
     display: none;
+  }
+}
+
+.privacy {
+  margin-top: 25px;
+  margin-bottom: 40px;
+  p {
+    margin-top: 10px;
+  }
+
+  h2 {
+    margin-top: 15px;
+    font-size: 1.2rem;
   }
 }
 

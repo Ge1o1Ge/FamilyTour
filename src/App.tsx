@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
 import FAQ from './pages/Faq';
+import Privacy from './pages/Privacy';
+
 
 const App = () => {
   return (
@@ -17,6 +19,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/faq" element={<FAQ />} />
+						<Route path="/privacy-policy" element={<Privacy />} />
           </Routes>
         </main>
         <Footer />
