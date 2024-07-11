@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './FAQ.scss';
+import './faq.scss';
 import { faqData } from '../constants';
 
 const FAQ: React.FC = () => {

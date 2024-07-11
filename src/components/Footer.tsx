@@ -17,8 +17,8 @@ const Footer = () => {
         <div className="nav__menu">
           <ul className="nav__list">
             <li className="nav__item">
-              <a className="nav__link" href="/about">
-                i.a.bogachev@roscherk.su
+              <a className="nav__link" href="mailto:support@roscherk.su">
+							 support@roscherk.su
               </a>
             </li>
             <li className="nav__item">
