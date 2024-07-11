@@ -5,8 +5,15 @@ const Privacy = () => {
         <p></p>
         <h1>Политика конфиденциальности / Privacy policy</h1>
         <p></p>
-        <div style={{ display: 'table', clear: 'both' }}>
-          <div style={{ float: 'left', width: '45%' }}>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            padding: '5px',
+          }}
+        >
+          <div style={{ width: '45%', minWidth: '300px', padding: '5px' }}>
             <p>АО"Росчерк" </p>
             <p>
               далее по тексту — Разработчик, благодарит Вас за проявленный
@@ -330,10 +337,8 @@ const Privacy = () => {
               редакцией.
             </p>
           </div>
-          <div style={{float: 'left', width: '10%'}}>
-            <p> </p>
-          </div>
-					<div style={{ float: "left", width: "45%" }}>
+
+          <div style={{ width: '45%', minWidth: '300px', padding: '5px' }}>
             <p>АО"Росчерк" </p>
             <p>
               hereinafter referred to as the Developer, is grateful for your
