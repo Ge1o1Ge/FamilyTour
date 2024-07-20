@@ -31,7 +31,7 @@ import gaagrImg from './set/gaagr.jpg';
 import sochiOverview from './set/sochi.jpeg';
 import jeepTour from './set/jeep-tout-psaho.jpg';
 import solokhAulJeep from './set/jeep-tour.jpeg';
-import mammothGorgeJeep from './set/jeep-tour.jpg';
+import mammothGorgeJeep from './set/mamont_canion.jpg';
 
 import quadrobike from './set/quadrobike.jpg';
 import rafting from './set/rafting.jpg';
@@ -46,7 +46,7 @@ import ricaPitsunda from './set/rica.jpg';
 import dolphinarium from './set/dolphinarium.jpeg';
 
 import seaSafary from './set/sea-yacht.jpg';
-import seaFish from './set/sea-fish.jpg';
+import seaFish from './set/fising.jpg';
 import seaYachtArenda from './set/sea-yacht2.jpg';
 
 export {

@@ -27,7 +27,7 @@ const Card = ({
           className={`${className ? `${className}__card__price` : ''} card__price`}
         >
           {' '}
-          От {card.startPrice}
+          {card.startPrice}
         </span>
       )}
       {(card.isHit || card.isNew) && (

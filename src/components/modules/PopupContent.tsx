@@ -55,7 +55,7 @@ const PopupContent = ({ card }: { card: CardInterface }) => {
         )}
         <div className="popup__order__box">
         {card.startPrice !== '0' && (
-          <p className="popup__right__price">Цена от {card.startPrice}</p>
+          <p className="popup__right__price">Цена: {card.startPrice}</p>
         )}
           <button className={`popup__order card__order`}>Забронировать</button>
         </div>
