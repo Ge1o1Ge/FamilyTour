@@ -1,0 +1,48 @@
+/* components/VipTours.module.scss */
+@import '../globalStyles/vars'; /* Подключение глобальных переменных и миксинов */
+
+/* Основной контейнер VIP туров */
+.vipTours {
+  z-index: 3;
+  @extend %text-font; /* Использование расширения шрифта */
+  margin-bottom: 20px;
+  padding: 2rem;
+
+}
+
+/* Описание секции VIP туров */
+.vipToursDescription {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+/* Заголовок */
+.vipToursTitle {
+  font-size: 60px;
+}
+
+/* Текст */
+.vipToursText {
+  font-size: 16px;
+  max-width: 650px;
+  margin-top: 25px;
+  font-weight: normal;
+}
+
+/* Теги */
+.vipToursTags {
+  font-size: 12px;
+  color: $buttonsP; /* Использование переменной из глобального файла */
+}
+
+/* Блок с карточками */
+.vipToursBox {
+	width: min(1280px, 100%);
+	margin: 0 auto;
+	padding: 0 20px;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}

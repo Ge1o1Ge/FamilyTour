@@ -27,6 +27,6 @@
     /* testing */
     "types": ["jest", "@testing-library/jest-dom", "vite-plugin-svgr/client"]
   },
-  "include": ["src"],
+  "include": ["src", "global.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

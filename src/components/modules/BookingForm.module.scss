@@ -1,0 +1,59 @@
+/* components/modules/BookingForm.module.css */
+@import '../../globalStyles/vars'; /* Подключение глобальных переменных и миксинов */
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 300px;
+  width: 50%;
+}
+
+.booking-form label {
+  font-size: 1rem;
+  font-weight: bold; /* Добавление жирного начертания для ярлыков */
+  margin-bottom: 0.5rem; /* Отступ снизу для улучшения отступов */
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 15px;
+  background-color: $inputsBg; /* Переменная для фона полей ввода */
+  color: $textDark; /* Переменная для цвета текста */
+  border: 1px solid #ccc; /* Добавление границы */
+}
+
+.booking-form input[type="number"] {
+	appearance: textfield;
+  -moz-appearance: textfield; /* Удаление стрелок у числовых полей в Firefox */
+}
+
+.booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+  color: $textDark; /* Цвет индикатора выбора даты */
+}
+
+.booking-form button {
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-size: 1rem;
+  background-color: $blue; /* Переменная для фона кнопки */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+.booking-form button:hover {
+  background-color: #0056b3; /* Темнее фон при наведении */
+}
+
+.confirmationMessage {
+  font-size: 1.2rem;
+  color: $textDark;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  text-align: center;
+}

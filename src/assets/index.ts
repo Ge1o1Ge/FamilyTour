@@ -118,6 +118,5 @@ export const slides = [
   ricaPitsunda,
   dolphinarium,
   seaSafary,
-  seaFish,
   seaYachtArenda,
 ]

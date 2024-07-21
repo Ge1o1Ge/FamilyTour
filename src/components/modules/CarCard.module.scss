@@ -1,0 +1,33 @@
+/* components/CarCard.module.css */
+.car-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+	min-height: 400px;
+	width: 60%;
+}
+
+.car-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.car-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.car-card img {
+	display: block;
+  width: 100%;
+	height: 100%;
+	object-fit: contain;
+  border-radius: 8px;
+}
+
+.car-card-container {
+	width: 100%;
+	height: 250px;
+	background-color: rgb(206, 203, 203);
+}

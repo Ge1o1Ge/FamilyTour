@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 
 import { Excurs, Hero, Header, Sea, Hotels } from './components';
+import VipTours from './components/VipTours';
 import Transfers from './components/Transfers';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
@@ -55,10 +56,10 @@ const App = () => {
           <span className="excurs__background__top"></span>
           <span className="excurs__background__mountain"></span>
         </div>
-        {/* <div className="vip-tours__background">
+        <div className="vip-tours__background">
           <span className="vip-tours__background__top"></span>
           <VipTours />
-        </div> */}
+        </div>
         <div className="sea__background">
           {!isMedia880 && <span className="sea__background__top"></span>}
           <Sea />
