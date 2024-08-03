@@ -1,0 +1,109 @@
+/* components/HotelSection.module.scss */
+@import '../globalStyles/vars'; /* Подключение глобальных переменных и миксинов */
+
+/* Основной контейнер секции отелей */
+.hotelSection {
+  z-index: 3;
+  @extend %text-font; /* Использование расширения шрифта */
+  margin-bottom: 20px;
+  padding: 2rem;
+  color: $textLight; /* Assuming there's a variable for light text color */
+}
+
+/* Описание секции отелей */
+.hotelDescription {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+/* Заголовок */
+.hotelTitle {
+  font-size: 60px;
+  color: $textLight; /* Ensure the title is readable on dark background */
+}
+
+/* Текст */
+.hotelText {
+  font-size: 16px;
+  max-width: 650px;
+  margin-top: 25px;
+  font-weight: normal;
+  color: $textLight; /* Ensure the text is readable on dark background */
+}
+
+/* Теги */
+.hotelTags {
+  font-size: 12px;
+  color: $blue; /* Assuming there's a variable for an accent color that stands out on dark background */
+}
+
+/* Блок с формой */
+.hotelBox {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 1000px) {
+  .hotelBox {
+    flex-wrap: wrap;
+  }
+}
+
+/* Form Specific Styles */
+.hotelBookingForm {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hotelBookingForm h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: $textLight; /* Ensure the heading is readable on dark background */
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: $textLight; /* Ensure the label is readable on dark background */
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid $textLight;
+  border-radius: 5px;
+  background-color: $darkEls; /* Assuming there's a variable for input background color */
+  color: $textLight; /* Assuming there's a variable for dark text color */
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+
+
+button {
+  background-color: $blue;
+  color: $textLight; /* Assuming there's a variable for button text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: darken($buttonsP, 10%);
+}

@@ -1,35 +1,51 @@
-import { CardInterface } from '../../types';
-import { useMediaQuery } from '../assets/hooks/useMediaQuery';
+// components/HotelSection.tsx
+import React, { useState } from 'react';
 import { hotelsCardsInfo } from '../constants';
 import { SectionWrapper } from '../hoc';
-import Card from './modules/Card';
-import CardsSlider from './modules/CardsSlider';
+import HotelBookingForm from './modules/HotelBookingForm';
 
-const Hotels = () => {
-  const isMedia1040 = useMediaQuery(1040);
+import styles from './HotelSection.module.scss';
+import DestinationCard from './modules/DestinationCard';
+
+const Hotels: React.FC = () => {
+  const [selectedDestinationId, setSelectedDestinationId] = useState<string>(
+    `${hotelsCardsInfo[0].id}`
+  );
+
+  const handleDestinationSelect = (destinationId: string) => {
+    setSelectedDestinationId(destinationId);
+  };
+
+  const selectedDestination = hotelsCardsInfo.find(
+    (destination) => `${destination.id}` === selectedDestinationId
+  );
 
   return (
-    <div className="hotels">
-      <div className="hotels__description">
-        <h2 className="hotels__title">Бронирование отелей</h2>
+    <div className={`${styles.hotelSection} container`}>
+      <div className={styles.hotelDescription}>
+        <h2 className={styles.hotelTitle}>Бронирование отелей</h2>
+        <p className={styles.hotelText}>
+          У нас Вы можете забронировать любой отель на Черноморском побережье,
+          наши опытные менеджеры подберут для Вас тур вашей мечты. Мы учтем все
+          пожелания и предложим варианты размещения для всей вашей семьи. Наша
+          компания знает все нюансы по каждому отелю, так как наш офис находится
+          в городе Сочи и наши менеджеры были в каждом отеле лично и смогут
+          проконсультировать вас зная все изнутри. Заполните форму для брони, и
+          мы свяжемся с вами!
+        </p>
+        <p className={`${styles.hotelText} ${styles.hotelTags}`}>
+          #Отели #Курорты #ОтдыхМечты
+        </p>
       </div>
-      {!isMedia1040 && (
-        <div className="hotels__box">
-          {hotelsCardsInfo.map((card) => (
-            <Card
-              key={card?.id}
-              className="hotels"
-              card={card as CardInterface}
-            />
-          ))}
-        </div>
-      )}
-      {isMedia1040 && (
-        <CardsSlider cards={hotelsCardsInfo} styleName='hotels'/>
-      )}
+      <div className={styles.hotelBox}>
+        {selectedDestination && (
+          <DestinationCard destination={selectedDestination} />
+        )}
+        <HotelBookingForm onDestinationSelect={handleDestinationSelect} />
+      </div>
     </div>
   );
 };
 
-const HotelsWrapped = SectionWrapper(Hotels, 'hotels');
-export default HotelsWrapped;
+const HotelSectionWrapped = SectionWrapper(Hotels, 'hotelSection', false);
+export default HotelSectionWrapped;

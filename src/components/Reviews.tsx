@@ -5,7 +5,7 @@ import ReviewsSlider from './modules/ReviewsSlider';
 
 const Reviews = () => {
   return (
-    <div className="reviews">
+    <div className="reviews__container">
       <div className="reviews__description section">
         <h2 className="reviews__title">Отзывы</h2>
       </div>
