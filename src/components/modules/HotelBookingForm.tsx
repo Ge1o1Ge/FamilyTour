@@ -61,7 +61,6 @@ const HotelBookingForm: React.FC<HotelBookingFormProps> = ({ onDestinationSelect
               onChange={handleDestinationChange}
               required
             >
-              <option value="">Выберите город</option>
               {hotelsCardsInfo.map((hotel) => (
                 <option key={hotel.id} value={hotel.id}>
                   {hotel.name}
