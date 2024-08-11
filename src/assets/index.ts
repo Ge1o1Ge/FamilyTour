@@ -30,7 +30,7 @@ import blueLaceImg from './set/blue-lace.jpg';
 import gaagrImg from './set/gaagr.jpg';
 import sochiOverview from './set/sochi.jpeg';
 import jeepTour from './set/jeep-tout-psaho.jpg';
-import solokhAulJeep from './set/jeep-tour.jpeg';
+import solokhAulJeep from './set/solohaul.jpeg';
 import mammothGorgeJeep from './set/mamont_canion.jpg';
 
 import quadrobike from './set/quadrobike.jpg';
@@ -48,6 +48,11 @@ import dolphinarium from './set/dolphinarium.jpeg';
 import seaSafary from './set/sea-yacht.jpg';
 import seaFish from './set/fising.jpg';
 import seaYachtArenda from './set/sea-yacht2.jpg';
+
+import gelendjik from './set/gelenjik.webp';
+import anapa from './set/anapa.jpg';
+import krym from './set/krym.webp';
+
 
 export {
   logo,
@@ -90,6 +95,9 @@ export {
   seaFish,
   seaYachtArenda,
   menuIcon,
+	gelendjik,
+	anapa,
+	krym,
 };
 
 export const arrows = {
@@ -119,4 +127,6 @@ export const slides = [
   dolphinarium,
   seaSafary,
   seaYachtArenda,
+	gelendjik,
+	anapa,
 ]

@@ -74,7 +74,7 @@ const Footer = () => {
           <p className="footer__phone__time">пн-вс 8:00 - 22:00</p>
           <a
             className="footer__phone__link"
-            href="mailto:Familytransfer_sochi@mail.ru"
+            href="mailto:Familytoursochi@yandex.ru"
           >
             <img
               className="footer__phone__link__img"
@@ -82,7 +82,7 @@ const Footer = () => {
               alt="телефон"
             />
             <span className="footer__phone__link__text">
-              Familytransfer_sochi@mail.ru
+              Familytoursochi@yandex.ru
             </span>
           </a>
         </div>

@@ -13,6 +13,7 @@ import {
 const Transfers = () => {
   const [placeholderDate, setPlaceholderDate] = useState('');
   const [isBackDate, setIsBackDate] = useState(false);
+  const [showPopup, setShowPopup] = useState(false); // Состояние для попапа
   const { tranfersInfo } = useTransfersInfo();
   const { transfersSelectedItem } = useTransfersSelectedItem();
 
@@ -20,7 +21,11 @@ const Transfers = () => {
 
   useEffect(() => {
     const currentDate = new Date();
-    const formattedDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
+    const formattedDate = `${currentDate.getFullYear()}-${(
+      currentDate.getMonth() + 1
+    )
+      .toString()
+      .padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
     setPlaceholderDate(formattedDate);
   }, []);
 
@@ -67,7 +72,8 @@ const Transfers = () => {
       )
       .then(
         (_result) => {
-          alert('Заявка отправлена успешно!');
+          setShowPopup(true); // Показать попап
+          setTimeout(() => setShowPopup(false), 3000); // Скрыть попап через 3 секунды
         },
         (_error) => {
           alert('Произошла ошибка при отправке заявки.');
@@ -77,6 +83,11 @@ const Transfers = () => {
 
   return (
     <div className="transfers">
+      {showPopup && ( // Попап успешной отправки
+        <div className="popup__succes">
+          <p>Заявка отправлена успешно!</p>
+        </div>
+      )}
       <div className="transfers__description section">
         <h2 className="transfers__title">Трансфер</h2>
       </div>
@@ -141,7 +152,7 @@ const Transfers = () => {
                       Время поодачи обратно:
                     </label>
                     <input
-                      id="time2"
+                      id="transfers__form__input__time2"
                       name="time2"
                       type="time"
                       className="transfers__form__input__time"
@@ -163,17 +174,21 @@ const Transfers = () => {
             </div>
             <div className="transfers__form__fields__details">
               <div className="transfers__form__fields__details__box">
-                <label htmlFor="passangers">Кол-во пассажиров:</label>
-                <input
-                  id="passangers"
-                  name="passangers"
-                  type="number"
-                  placeholder="1"
-                  required
-                  min="1"
-                />
-                <label htmlFor="childSeat">Детское кресло:</label>
-                <input type="checkbox" id="childSeat" name="childSeat" />
+                <div>
+                  <label htmlFor="passangers">Кол-во пассажиров:</label>
+                  <input
+                    id="passangers"
+                    name="passangers"
+                    type="number"
+                    placeholder="1"
+                    required
+                    min="1"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="childSeat">Детское кресло:</label>
+                  <input type="checkbox" id="childSeat" name="childSeat" />
+                </div>
               </div>
               <label htmlFor="baggage">Чемоданы:</label>
               <input
@@ -193,7 +208,7 @@ const Transfers = () => {
                   type="text"
                   required
                   placeholder="+7-911-123-45-67"
-                  pattern="\+\d{1,3}-\d{3}-\d{3}-\d{2}-\d{2}"
+                  // pattern="\+\d{1,3}-\d{3}-\d{3}-\d{2}-\d{2}"
                 />
               </div>
               <div>

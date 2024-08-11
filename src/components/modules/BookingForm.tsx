@@ -8,29 +8,32 @@ interface BookingFormProps {
 }
 
 const BookingForm: React.FC<BookingFormProps> = ({ onCarSelect }) => {
-  const [selectedCar, setSelectedCar] = useState<string>(`${vipToursCardsInfo[0].id}`);
-  const [name, setName] = useState<string>('');
-  const [phone, setPhone] = useState<string>('');
-  const [date, setDate] = useState<string>('');
-  const [peopleCount, setPeopleCount] = useState<number>(1);
+  const [formData, setFormData] = useState({
+    selectedCar: `${vipToursCardsInfo[0].id}`,
+    name: '',
+    phone: '',
+    date: '',
+    peopleCount: 1,
+    preferences: '',
+  });
   const [submitted, setSubmitted] = useState<boolean>(false);
 
-  const handleCarChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const carId = event.target.value;
-    setSelectedCar(carId);
-    onCarSelect(carId);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { id, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: id === 'peopleCount' ? Number(value) : value,
+    }));
+
+    if (id === 'selectedCar') {
+      onCarSelect(value);
+    }
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Логика обработки бронирования
-    console.log({
-      selectedCar,
-      name,
-      phone,
-      date,
-      peopleCount
-    });
+    console.log(formData);
     setSubmitted(true);
   };
 
@@ -38,8 +41,12 @@ const BookingForm: React.FC<BookingFormProps> = ({ onCarSelect }) => {
     <>
       {!submitted ? (
         <form className={styles.bookingForm} onSubmit={handleSubmit}>
-          <label htmlFor="car">Выберите машину:</label>
-          <select id="car" value={selectedCar} onChange={handleCarChange}>
+          <label htmlFor="selectedCar">Выберите машину:</label>
+          <select
+            id="selectedCar"
+            value={formData.selectedCar}
+            onChange={handleChange}
+          >
             {vipToursCardsInfo.map((car: CardInterface) => (
               <option key={car.id} value={car.id}>
                 {car.name}
@@ -51,8 +58,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onCarSelect }) => {
           <input
             id="name"
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={formData.name}
+            onChange={handleChange}
             required
           />
 
@@ -60,8 +67,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onCarSelect }) => {
           <input
             id="phone"
             type="tel"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={formData.phone}
+            onChange={handleChange}
             required
           />
 
@@ -69,8 +76,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ onCarSelect }) => {
           <input
             id="date"
             type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+            value={formData.date}
+            onChange={handleChange}
             required
           />
 
@@ -78,11 +85,22 @@ const BookingForm: React.FC<BookingFormProps> = ({ onCarSelect }) => {
           <input
             id="peopleCount"
             type="number"
-            value={peopleCount}
+            value={formData.peopleCount}
             min="1"
-            onChange={(e) => setPeopleCount(Number(e.target.value))}
+            onChange={handleChange}
             required
           />
+
+          <div className={styles.formGroupText}>
+            <label htmlFor="preferences">
+              Ваши пожелания к отелю (питание, бассейн и т.д.)
+            </label>
+            <textarea
+              id="preferences"
+              value={formData.preferences}
+              onChange={handleChange}
+            />
+          </div>
 
           <button type="submit">Забронировать</button>
         </form>
