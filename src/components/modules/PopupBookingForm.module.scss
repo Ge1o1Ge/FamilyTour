@@ -1,0 +1,110 @@
+/* PopupBookingForm.module.scss */
+@import '../../globalStyles/vars'; /* Подключение глобальных переменных и миксинов */
+
+.popupBookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 300px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba($bgColor, 0.8);
+}
+
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bookingForm label {
+  font-size: 1rem;
+  font-weight: bold; /* Добавление жирного начертания для ярлыков */
+  margin-bottom: 0.5rem; /* Отступ снизу для улучшения отступов */
+  color: $textLight; /* Обеспечить читабельность ярлыков на тёмном фоне */
+}
+
+.bookingForm input,
+.bookingForm select,
+.bookingForm textarea {
+  padding: 4px 0.5rem;
+  font-size: 1rem;
+  border-radius: 15px;
+  background-color: $inputsBg; /* Переменная для фона полей ввода */
+  color: $textDark; /* Переменная для цвета текста */
+  border: 1px solid #ccc; /* Добавление границы */
+}
+
+.bookingForm input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield; /* Удаление стрелок у числовых полей в Firefox */
+}
+
+.bookingForm input[type="date"]::-webkit-calendar-picker-indicator {
+  color: $textDark; /* Цвет индикатора выбора даты */
+}
+
+.bookingForm textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.bookingForm button {
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-size: 1rem;
+  background-color: $blue; /* Переменная для фона кнопки */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+.bookingForm button:hover {
+  background-color: darken($blue, 10%); /* Темнее фон при наведении */
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.confirmationMessage {
+  font-size: 1.2rem;
+  color: $textLight;
+  padding: 1rem;
+  background-color: rgba($bgColor, 0.8);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.formGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ageInput {
+  max-width: 70px;
+  padding: 0;
+}
+
+.formGroupText {
+  width: 100%;
+
+  textarea {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .popupBookingForm {
+    width: 100%;
+  }
+
+  .formGroup {
+    flex-direction: column;
+  }
+}

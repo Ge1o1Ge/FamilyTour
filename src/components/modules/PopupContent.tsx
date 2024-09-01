@@ -1,13 +1,25 @@
 import { CardInterface } from '../../../types';
 import { arrows } from '../../assets';
-import { closeQickViewModal } from '../../context/modals';
-import { removeOverflowHiddenFromBody } from '../../utils/common';
+import { closeQickViewModal, openQickViewModal } from '../../context/modals';
+import { setPopupContent } from '../../context/popupContent';
+import { addOverflowHiddenToBody, removeOverflowHiddenFromBody } from '../../utils/common';
+import PopupBookingForm from './PopupBookingForm';
 
 const PopupContent = ({ card }: { card: CardInterface }) => {
   const handleCloseModal = () => {
     removeOverflowHiddenFromBody();
     closeQickViewModal();
   };
+
+	const handleOpenOrder = () => {
+    setPopupContent(<PopupBookingForm card={card}/>)
+		removeOverflowHiddenFromBody();
+    closeQickViewModal();
+		setTimeout(()=>{
+			addOverflowHiddenToBody()
+			openQickViewModal()
+		}, 300)
+  }
 
   return (
     <div className="popup">
@@ -57,7 +69,7 @@ const PopupContent = ({ card }: { card: CardInterface }) => {
         {card.startPrice !== '0' && (
           <p className="popup__right__price">Цена: {card.startPrice}</p>
         )}
-          <button className={`popup__order card__order`}>Забронировать</button>
+          <button className={`popup__order card__order`} onClick={handleOpenOrder}>Забронировать</button>
         </div>
       </div>
     </div>

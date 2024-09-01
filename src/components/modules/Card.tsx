@@ -4,6 +4,7 @@ import { openQickViewModal } from '../../context/modals';
 import { setPopupContent } from '../../context/popupContent';
 import PopupContent from './PopupContent';
 import { addOverflowHiddenToBody } from '../../utils/common';
+import PopupBookingForm from './PopupBookingForm';
 
 const Card = ({
   card,
@@ -16,6 +17,12 @@ const Card = ({
 
   const handleOpenModal = () => {
     setPopupContent(<PopupContent card={card}/>)
+    addOverflowHiddenToBody()
+    openQickViewModal()
+  }
+
+	const handleOpenOrder = () => {
+    setPopupContent(<PopupBookingForm card={card}/>)
     addOverflowHiddenToBody()
     openQickViewModal()
   }
@@ -69,7 +76,9 @@ const Card = ({
       >
         <button
           className={`${className ? `${className}__card__order` : ''} card__order`}
+					onClick={handleOpenOrder}
         >
+
           Забронировать
         </button>
         <button

@@ -14,6 +14,7 @@ import arrowRight from './arrow-right.svg';
 import closeImg from './close.svg';
 import star from './star.svg';
 import menuIcon from './icon_menu.svg';
+import footerBg from './footer_bg.png';
 
 import bisnesCar from './transfers/bisnes.png';
 import busCar from './transfers/bus.png';
@@ -49,10 +50,13 @@ import seaSafary from './set/sea-yacht.jpg';
 import seaFish from './set/fising.jpg';
 import seaYachtArenda from './set/sea-yacht2.jpg';
 
-import gelendjik from './set/gelenjik.webp';
+import gelendjik from './set/gelenjik.jpg';
 import anapa from './set/anapa.jpg';
-import krym from './set/krym.webp';
-
+import krym from './set/krym.jpg';
+import redFlat2 from './set/redFlat2.jpg';
+import sochiHotel from './set/sochiHotel.jpg';
+import abhaziyaHotel from './set/abhaziyaHotel.jpg';
+import anapaHotel from './set/anapaHotel.jpg';
 
 export {
   logo,
@@ -98,6 +102,11 @@ export {
 	gelendjik,
 	anapa,
 	krym,
+	footerBg,
+	redFlat2,
+	sochiHotel,
+	abhaziyaHotel,
+	anapaHotel,
 };
 
 export const arrows = {

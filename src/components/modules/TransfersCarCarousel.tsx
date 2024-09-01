@@ -74,7 +74,7 @@ const TransfersCarCarousel = () => {
                   src={item.carImg}
                   alt={`изображение для тарифа ${item.name}`}
                 />
-                <p className="car__carousel-item__text">{item.startPrice}</p>
+                <p className="car__carousel-item__text">{item.startPrice ? item.startPrice : 'Цена по запросу'}</p>
               </div>
             </li>
           );

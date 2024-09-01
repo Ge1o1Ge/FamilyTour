@@ -29,13 +29,13 @@ html {
 }
 
 button {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 button:hover {
-	background-color: darken($buttonsP, 10%);
-	transition: all 0.5s ease;
-	color: rgba($textBlue, 1);
+  background-color: darken($buttonsP, 10%);
+  transition: all 0.5s ease;
+  color: rgba($textBlue, 1);
 }
 
 .main {
@@ -71,6 +71,7 @@ button:hover {
   position: fixed;
   top: 0;
   left: 0;
+	padding: 10px;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -93,6 +94,33 @@ button:hover {
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-y: scroll;
+
+  /* PopupBookingForm.module.scss */
+  .popupBookingForm {
+    // Ваши стили для формы в попапе
+		background-color: rgba($bgColor, 0.9);
+  }
+
+  .bookingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .formGroupText {
+    margin-top: 10px;
+  }
+
+  .formActions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .confirmationMessage {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+  }
 
   .popup::-webkit-scrollbar {
     width: 4px;
@@ -264,12 +292,12 @@ button:hover {
 
   &__button:active {
     background-color: $buttonsP;
-		transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   &__button:hover {
     background-color: $buttonsP;
-		transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   &__dotes {
@@ -483,12 +511,12 @@ button:hover {
 
   &__social__link__img {
     height: 40px;
-		transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
 
-	&__social__link__img:hover {
+  &__social__link__img:hover {
     transform: scale(1.1);
-		transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   &__phone {
@@ -530,11 +558,11 @@ button:hover {
     margin-left: 20px;
   }
 
-	&__phone__link:hover {
-		* {
-			color: rgba($blue, 1);
-			transition: all 0.5s ease;
-		}
+  &__phone__link:hover {
+    * {
+      color: rgba($blue, 1);
+      transition: all 0.5s ease;
+    }
   }
 }
 
@@ -708,10 +736,10 @@ button:hover {
     padding-left: 15px;
   }
 
-	&__nav__link:hover {
+  &__nav__link:hover {
     color: rgba($textBlue, 1);
     transform: scale(1.2);
-		transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   &__box {
@@ -722,9 +750,10 @@ button:hover {
   }
 
   &__slider {
-    width: 45vw;
+    margin-right: 100px;
+    width: 30vw;
     margin-bottom: 45px;
-    height: 75vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
   }
@@ -764,7 +793,7 @@ button:hover {
 
   &__slider__button:hover {
     background-color: $buttonsP;
-		transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   &__slider__dotes {
@@ -1736,9 +1765,9 @@ button:hover {
       display: none;
     }
 
-		.transfers__form__fields__details__box {
-			flex-wrap: wrap;
-		}
+    .transfers__form__fields__details__box {
+      flex-wrap: wrap;
+    }
   }
 }
 
@@ -1867,6 +1896,7 @@ button:hover {
 
   &__background {
     background-color: $darkEls;
+    background-image: url('../assets/footer_bg.png');
   }
 
   .left__border {
@@ -1910,20 +1940,20 @@ button:hover {
     color: rgba($textLight, 1);
   }
 
-	&__nav__link:hover {
-		color: $blue;
-		transition: all 0.5s ease;
+  &__nav__link:hover {
+    color: $blue;
+    transition: all 0.5s ease;
   }
-	
+
   &__inner__tg__link {
     text-decoration: none;
     color: rgba($textLight, 1);
     margin-bottom: 15px;
   }
 
-	&__inner__tg__link:hover {
-		color: $blue;
-		transition: all 0.5s ease;
+  &__inner__tg__link:hover {
+    color: $blue;
+    transition: all 0.5s ease;
   }
 
   &__inner__tg__link__subscribe {
@@ -1934,10 +1964,10 @@ button:hover {
     border-radius: 10px;
   }
 
-	&__inner__tg__link__subscribe:hover {
-		background-color: rgba($buttons, 0.6);
-		color: $blue;
-		transition: all 0.5s ease;
+  &__inner__tg__link__subscribe:hover {
+    background-color: rgba($buttons, 0.6);
+    color: $blue;
+    transition: all 0.5s ease;
   }
 
   &__inner__tg__box {
@@ -1961,9 +1991,9 @@ button:hover {
     margin-left: 15px;
   }
 
-	&__social__link:hover {
-		transform: scale(1.1);
-		transition: all 0.5s ease;
+  &__social__link:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
   }
 
   &__social__link__img {
@@ -1976,10 +2006,10 @@ button:hover {
     align-items: center;
   }
 
-	&__phone__link:hover {
-		transform: scale(1.1);
-		color: $blue;
-		transition: all 0.5s ease;
+  &__phone__link:hover {
+    transform: scale(1.1);
+    color: $blue;
+    transition: all 0.5s ease;
   }
 
   &__phone__link__img {
