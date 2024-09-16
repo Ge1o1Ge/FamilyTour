@@ -66,6 +66,9 @@ import sawSochi from './set/sawSochi.jpg';
 import chernigovka from './set/chernigovka.jpg';
 import newAfon from './set/newAfon.jpeg';
 import rica from './set/rica2.jpg';
+import horses from './set/horses.jpg';
+
+
 
 
 
@@ -127,6 +130,7 @@ export {
 	chernigovka,
 	newAfon,
 	rica,
+	horses
 };
 
 export const arrows = {

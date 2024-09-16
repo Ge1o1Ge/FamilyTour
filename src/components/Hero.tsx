@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef, MouseEvent } from 'react';
-import { arrows, menuIcon, slides } from '../assets';
+import { arrows, menuIcon } from '../assets';
 import { useMediaQuery } from '../assets/hooks/useMediaQuery';
 import { menuLinks } from '../constants';
 import { SectionWrapper } from '../hoc';
-import MainSlider from './modules/HeroSlider';
 
 const Hero = () => {
   const isMedia900 = useMediaQuery(900);

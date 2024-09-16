@@ -43,6 +43,7 @@ import {
   chernigovka,
   newAfon,
   rica,
+	horses,
 } from '../assets';
 
 export const socialLinks = [
@@ -548,7 +549,7 @@ export const excursCardsInfo = [
       dopUslugi: ['Индивидуально тоже можно!'],
       time: `Ежедневно: 10:00, 14:00, 16:00`,
     },
-    img: [thermalSpring2],
+    img: [horses],
     isHit: false,
     isNew: false,
     startPrice: '2500р',
@@ -575,7 +576,7 @@ export const excursCardsInfo = [
       dopUslugi: [''],
       time: `Ежедневно в группе 8-9 человек`,
     },
-    img: [thermalSpring2],
+    img: [jeepTourRitsa],
     isHit: false,
     isNew: false,
     startPrice: (
@@ -931,7 +932,6 @@ export const vipToursCardsInfo = [
 		startPrice: (
 			<>
 				Из Адлера\Сириуса: 20 000р <br />
-				
 			</>
 		),
 	},

@@ -12,7 +12,7 @@ export interface CardInterface {
   img: string[];
   isHit: boolean;
   isNew: boolean;
-  startPrice: string;
+  startPrice: string | JSX.Element;
 }
 
 export interface TransfersInterface {
