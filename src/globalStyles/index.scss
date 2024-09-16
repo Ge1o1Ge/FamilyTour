@@ -813,13 +813,13 @@ button:hover {
     width: 100%;
   }
 
-  &__namer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-left: 20px;
-    margin-bottom: 140px;
-  }
+	&__namer {
+		display: flex;
+		flex-direction: column;
+		margin-left: 20px;
+		margin-bottom: 140px;
+		text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* черная размытие тень */
+	}
 
   &__namer__header {
     width: 40vw;
@@ -842,6 +842,7 @@ button:hover {
     height: 15px;
     background-color: $bgSpan;
     z-index: 2;
+		border-radius: 5px;
   }
 
   &__slide__carousel {

@@ -69,7 +69,7 @@ const Hero = () => {
       )}
       <div className="hero__box">
         <div className="hero__slider">
-          <MainSlider images={slides} />
+          {/* <MainSlider images={slides} /> */}
         </div>
         <div className="hero__namer">
           <h1 className="hero__namer__header">

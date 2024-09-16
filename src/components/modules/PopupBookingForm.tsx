@@ -98,7 +98,7 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
 
           <div className={styles.formGroupText}>
             <label htmlFor="preferences">
-              Ваши пожелания к отелю (питание, бассейн и т.д.)
+              Ваши пожелания по отдыху
             </label>
             <textarea
               id="preferences"
