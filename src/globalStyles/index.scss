@@ -1118,6 +1118,7 @@ button:hover {
 
   &__card__img {
     width: 100%;
+		object-fit: cover;
   }
 
   &__card__title {

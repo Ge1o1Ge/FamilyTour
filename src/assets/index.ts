@@ -26,6 +26,7 @@ import watherFallsImg1 from './set/33-watherfals.jpg';
 import watherFallsImg2 from './set/33-watherfals2.webp';
 import watherFallsImg3 from './set/33-watherfals3.jpg';
 import vorontsovskayaCave from './set/voroncov-cave.jpg';
+import vorontsovskayaCave2 from './set/voroncov-cave2.jpg';
 import blueLaceImg from './set/blue-lace.jpg';
 
 import gaagrImg from './set/gaagr.jpg';
@@ -36,18 +37,19 @@ import mammothGorgeJeep from './set/mamont_canion.jpg';
 
 import quadrobike from './set/quadrobike.jpg';
 import rafting from './set/rafting.jpg';
-import abkhazia from './set/gaagr.jpg';
+import abkhazia from './set/abhaziya.jpg';
 import jeepTourAbkhazia from './set/jeep-tour.jpg';
 import goldenRingAbkhazia from './set/gaagr.jpg';
 
 import jeepTourRitsa from './set/rica.jpg';
 import thermalSpring from './set/kindig.jpg';
+import thermalSpring2 from './set/kindig2.jpg';
 import divingImg from './set/diving.jpg';
 import ricaPitsunda from './set/rica.jpg';
 import dolphinarium from './set/dolphinarium.jpeg';
 
 import seaSafary from './set/sea-yacht.jpg';
-import seaFish from './set/fising.jpg';
+import seaFish from './set/sea-fish.jpg';
 import seaYachtArenda from './set/sea-yacht2.jpg';
 
 import gelendjik from './set/gelenjik.jpg';
@@ -57,6 +59,16 @@ import redFlat2 from './set/redFlat2.jpg';
 import sochiHotel from './set/sochiHotel.jpg';
 import abhaziyaHotel from './set/abhaziyaHotel.jpg';
 import anapaHotel from './set/anapaHotel.jpg';
+
+import agurWaterfall from './set/agurWaterfal.jpg';
+import westAbhazia from './set/westAbhazia.jpg';
+import sawSochi from './set/sawSochi.jpg';
+import chernigovka from './set/chernigovka.jpg';
+import newAfon from './set/newAfon.jpeg';
+import rica from './set/rica2.jpg';
+
+
+
 
 export {
   logo,
@@ -107,6 +119,14 @@ export {
 	sochiHotel,
 	abhaziyaHotel,
 	anapaHotel,
+	agurWaterfall,
+	vorontsovskayaCave2,
+	westAbhazia,
+	thermalSpring2,
+	sawSochi,
+	chernigovka,
+	newAfon,
+	rica,
 };
 
 export const arrows = {
