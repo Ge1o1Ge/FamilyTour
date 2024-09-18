@@ -15,7 +15,7 @@ const Sea = () => {
           Насладитесь уединением и красотой водных просторов, ощущая прилив
           эмоций в каждом мгновении вашего отдыха.
         </p>
-        <p className="sea__text sea__tags">#Отвых_на_Море #Черное_Море </p>
+        <p className="sea__text sea__tags">#Отдых_на_Море #Черное_Море </p>
       </div>
       <div className="sea__box">
         {seaCardsInfo.map((card) => (

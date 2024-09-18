@@ -747,6 +747,7 @@ button:hover {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
+		min-height: 70vh;
   }
 
   &__slider {
@@ -822,7 +823,7 @@ button:hover {
 	}
 
   &__namer__header {
-    width: 40vw;
+		margin-top: 10px;
     font-family: 'Caveat', cursive;
     font-weight: 700;
     font-size: min(7vh, 8vw);
@@ -833,17 +834,17 @@ button:hover {
     background-color: $bgSpan;
   }
 
-  &__namer__line::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 45vw;
-    height: 15px;
-    background-color: $bgSpan;
-    z-index: 2;
-		border-radius: 5px;
-  }
+  // &__namer__line::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 15px;
+  //   background-color: $bgSpan;
+  //   z-index: 2;
+	// 	border-radius: 5px;
+  // }
 
   &__slide__carousel {
     width: 50vw;
@@ -854,6 +855,8 @@ button:hover {
   .hero__nav__link {
     font-size: 14px;
   }
+
+	
 }
 
 @media only screen and (max-width: 768px) {
@@ -861,11 +864,16 @@ button:hover {
     padding-bottom: 50px;
   }
 
+	.hero__namer__header {
+    width: 100%;
+    text-align: center;
+  }
+
   .hero__box {
     margin-top: 80px;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: nowrap;
   }
 
@@ -891,11 +899,6 @@ button:hover {
     width: calc(100vw - 20px);
     justify-content: flex-start;
     margin: 0;
-  }
-
-  .hero__namer__header {
-    width: 100%;
-    text-align: center;
   }
 
   .hero__namer__line {

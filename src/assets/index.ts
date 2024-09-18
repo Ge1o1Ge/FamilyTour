@@ -67,6 +67,8 @@ import chernigovka from './set/chernigovka.jpg';
 import newAfon from './set/newAfon.jpeg';
 import rica from './set/rica2.jpg';
 import horses from './set/horses.jpg';
+import abhaziya2 from './set/abhaziya2.jpg';
+
 
 
 

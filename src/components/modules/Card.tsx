@@ -29,14 +29,14 @@ const Card = ({
 
   return (
     <div className={`${className ? `${className}__card` : ''} card`}>
-      {card.startPrice !== '0' && (
+      {/* {card.startPrice !== '0' && (
         <span
           className={`${className ? `${className}__card__price` : ''} card__price`}
         >
           {' '}
           {card.startPrice}
         </span>
-      )}
+      )} */}
       {(card.isHit || card.isNew) && (
         <div
           className={`${className ? `${className}__card__tags` : ''} card__tags`}

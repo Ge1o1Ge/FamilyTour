@@ -67,9 +67,9 @@ const Hero = () => {
         </div>
       )}
       <div className="hero__box">
-        <div className="hero__slider">
-          {/* <MainSlider images={slides} /> */}
-        </div>
+        {/* <div className="hero__slider">
+          <MainSlider images={slides} />
+        </div> */}
         <div className="hero__namer">
           <h1 className="hero__namer__header">
             Незабываемый отдых по Черноморскому побережью
