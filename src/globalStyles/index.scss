@@ -832,7 +832,7 @@ button:hover {
     margin-top: 10px;
     font-family: 'Caveat', cursive;
     font-weight: 700;
-    font-size: min(6vh, 6vw);
+    font-size: min(7vh, 7vw);
     text-wrap: nowrap;
     display: flex;
     flex-wrap: wrap;
@@ -840,8 +840,10 @@ button:hover {
   }
 
   &__namer__header span:last-child {
-    margin-left: 30px;
-		font-size: min(5vh, 5vw);
+    margin-left: 5vw;
+		font-size: min(6vh, 6vw);
+		color: rgba($textBlue, 1);
+		text-decoration: underline;
   }
 
   &__namer__header span {
