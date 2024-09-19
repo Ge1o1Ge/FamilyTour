@@ -748,7 +748,7 @@ button:hover {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
-    min-height: 75vh;
+    min-height: 70vh;
   }
 
   &__slider {
@@ -828,19 +828,20 @@ button:hover {
   }
 
   &__namer__header {
+		width: min(1280px, 90vw);
     margin-top: 10px;
     font-family: 'Caveat', cursive;
     font-weight: 700;
     font-size: min(6vh, 6vw);
-    text-align: center;
     text-wrap: nowrap;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+		flex-direction: column;
   }
 
-  &__namer__header span:first-child {
-    margin-right: 15px;
+  &__namer__header span:last-child {
+    margin-left: 30px;
+		font-size: min(5vh, 5vw);
   }
 
   &__namer__header span {
@@ -873,6 +874,11 @@ button:hover {
 @media only screen and (max-width: 1000px) {
   .hero__nav__link {
     font-size: 14px;
+  }
+
+	.hero__namer__header span:last-child {
+    margin-left: 0;
+		font-size: min(5vh, 5vw);
   }
 }
 
