@@ -71,7 +71,7 @@ button:hover {
   position: fixed;
   top: 0;
   left: 0;
-	padding: 10px;
+  padding: 10px;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -98,7 +98,7 @@ button:hover {
   /* PopupBookingForm.module.scss */
   .popupBookingForm {
     // Ваши стили для формы в попапе
-		background-color: rgba($bgColor, 0.9);
+    background-color: rgba($bgColor, 0.9);
   }
 
   .bookingForm {
@@ -743,11 +743,12 @@ button:hover {
   }
 
   &__box {
-    margin-top: 80px;
+    max-width: 1280px;
+    margin: 60px auto 0;
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
-		min-height: 70vh;
+    min-height: 75vh;
   }
 
   &__slider {
@@ -814,19 +815,37 @@ button:hover {
     width: 100%;
   }
 
-	&__namer {
-		display: flex;
-		flex-direction: column;
-		margin-left: 20px;
-		margin-bottom: 140px;
-		text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* черная размытие тень */
-	}
+  &__namer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-bottom: 140px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* черная размытие тень */
+  }
 
   &__namer__header {
-		margin-top: 10px;
+    margin-top: 0;
+  }
+
+  &__namer__header {
+    margin-top: 10px;
     font-family: 'Caveat', cursive;
     font-weight: 700;
-    font-size: min(7vh, 8vw);
+    font-size: min(6vh, 6vw);
+    text-align: center;
+    text-wrap: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__namer__header span:first-child {
+    margin-right: 15px;
+  }
+
+  &__namer__header span {
+    font-style: inherit;
+    font-family: inherit;
   }
 
   &__namer__line {
@@ -843,7 +862,7 @@ button:hover {
   //   height: 15px;
   //   background-color: $bgSpan;
   //   z-index: 2;
-	// 	border-radius: 5px;
+  // 	border-radius: 5px;
   // }
 
   &__slide__carousel {
@@ -855,8 +874,6 @@ button:hover {
   .hero__nav__link {
     font-size: 14px;
   }
-
-	
 }
 
 @media only screen and (max-width: 768px) {
@@ -864,7 +881,7 @@ button:hover {
     padding-bottom: 50px;
   }
 
-	.hero__namer__header {
+  .hero__namer__header {
     width: 100%;
     text-align: center;
   }
@@ -1122,7 +1139,7 @@ button:hover {
 
   &__card__img {
     width: 100%;
-		object-fit: cover;
+    object-fit: cover;
   }
 
   &__card__title {

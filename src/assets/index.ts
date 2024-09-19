@@ -132,7 +132,8 @@ export {
 	chernigovka,
 	newAfon,
 	rica,
-	horses
+	horses,
+	abhaziya2
 };
 
 export const arrows = {

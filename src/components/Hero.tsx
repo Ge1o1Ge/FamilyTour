@@ -21,13 +21,19 @@ const Hero = () => {
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.addEventListener('mousedown', (ev) => handleClickOutside(ev as unknown as MouseEvent));
+      document.addEventListener('mousedown', (ev) =>
+        handleClickOutside(ev as unknown as MouseEvent)
+      );
     } else {
-      document.removeEventListener('mousedown', (ev) => handleClickOutside(ev as unknown as MouseEvent));
+      document.removeEventListener('mousedown', (ev) =>
+        handleClickOutside(ev as unknown as MouseEvent)
+      );
     }
 
     return () => {
-      document.removeEventListener('mousedown', (ev) => handleClickOutside(ev as unknown as MouseEvent));
+      document.removeEventListener('mousedown', (ev) =>
+        handleClickOutside(ev as unknown as MouseEvent)
+      );
     };
   }, [isMenuOpen]);
 
@@ -51,14 +57,22 @@ const Hero = () => {
           <button className="hero__nav_mobile__button" onClick={toggleMenu}>
             <img src={menuIcon} alt="показать меню" />
           </button>
-          <div ref={menuRef} className={`hero__nav_mobile__menu ${isMenuOpen ? 'open' : ''}`}>
-            <button className="popup__close__btn hero__nav_mobile__menu__close" onClick={toggleMenu}><img src={arrows.close} alt="закрыть" /></button>
+          <div
+            ref={menuRef}
+            className={`hero__nav_mobile__menu ${isMenuOpen ? 'open' : ''}`}
+          >
+            <button
+              className="popup__close__btn hero__nav_mobile__menu__close"
+              onClick={toggleMenu}
+            >
+              <img src={arrows.close} alt="закрыть" />
+            </button>
             {menuLinks.map((link, i) => (
               <a
                 className="hero__nav_mobile__menu__link"
                 href={link.link}
                 key={`${link.name}${i}`}
-                onClick={() => setIsMenuOpen(false)}  // Close the menu when a link is clicked
+                onClick={() => setIsMenuOpen(false)} // Close the menu when a link is clicked
               >
                 {link.name}
               </a>
@@ -72,7 +86,8 @@ const Hero = () => {
         </div> */}
         <div className="hero__namer">
           <h1 className="hero__namer__header">
-            Незабываемый отдых по Черноморскому побережью
+            <span>Незабываемый отдых</span>{' '}
+            <span>по Черноморскому побережью</span>
           </h1>
           <span className="hero__namer__line"></span>
         </div>

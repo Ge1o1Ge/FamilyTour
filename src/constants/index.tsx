@@ -44,6 +44,7 @@ import {
   newAfon,
   rica,
 	horses,
+	abhaziya2
 } from '../assets';
 
 export const socialLinks = [
@@ -245,7 +246,7 @@ export const excursCardsInfo = [
         `Невероятная возможность прокатиться на Зиплайне протяженностью 1км, который расположен на
         высоте 200метров над рекой Шахе.`,
       ],
-      time: `ежедневно`,
+      time: `ежедневно 13:00`,
     },
     img: [solokhAulJeep],
     isHit: false,
@@ -522,7 +523,7 @@ export const excursCardsInfo = [
     order: '',
     description: {
       info: `Вас ждет увлекательная программа 3 в 1: сорокоминутное шоу, Сочинский Дельфинарий, Океанариум, Пингвинарий. Это отличная возможность провести время для всей семьи в любую погоду в любое время года.`,
-      marshrut: ['Сочинский дельфинарий', 'Океанариум', 'Пигнгвинарий'],
+      marshrut: ['Сочинский дельфинарий', 'Океанариум', 'Пингвинарий'],
       dopUslugi: [],
       time: `среда, суббота в 13:00`,
     },
@@ -926,7 +927,7 @@ export const vipToursCardsInfo = [
 			dopUslugi: [],
 			time: 'ежедневно, продолжительность - 12 часов',
 		},
-		img: [abkhazia],  // Заменить на нужное изображение
+		img: [abhaziya2],  // Заменить на нужное изображение
 		isHit: false,
 		isNew: false,
 		startPrice: (
