@@ -18,7 +18,11 @@ const BookingForm: React.FC<BookingFormProps> = ({ onCarSelect }) => {
   });
   const [submitted, setSubmitted] = useState<boolean>(false);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     const { id, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -40,7 +44,16 @@ const BookingForm: React.FC<BookingFormProps> = ({ onCarSelect }) => {
   return (
     <>
       {!submitted ? (
-        <form className={styles.bookingForm} onSubmit={handleSubmit}>
+        <form
+          className={styles.bookingForm}
+          onSubmit={handleSubmit}
+          netlify-honeypot="bot-field"
+        >
+          <p className="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
           <label htmlFor="selectedCar">Выберите машину:</label>
           <select
             id="selectedCar"

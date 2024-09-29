@@ -72,9 +72,13 @@ const HotelBookingForm: React.FC<HotelBookingFormProps> = ({ onDestinationSelect
   return (
     <>
       {!submitted ? (
-        <form className={styles.hotelBookingForm} onSubmit={handleSubmit}>
+        <form className={styles.hotelBookingForm} onSubmit={handleSubmit} netlify-honeypot="bot-field">
           <h2>Форма для бронирования</h2>
-
+					<p className="hidden">
+						<label>
+							Don’t fill this out if you’re human: <input name="bot-field" />
+						</label>
+					</p>
           <div className={styles.formGroup}>
             <label htmlFor="destination">Выбор по городам</label>
             <select

@@ -94,7 +94,13 @@ const Transfers = () => {
       <form
         className="transfers__inner transfers__form section"
         onSubmit={handleSubmit}
+        netlify-honeypot="bot-field"
       >
+        <p className="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </p>
         <div className="transfers__form__left">
           <p className="transfers__text">
             Опытные водители на комфортабельных автомобилях готовы доставить вас
