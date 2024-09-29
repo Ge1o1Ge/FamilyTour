@@ -1,4 +1,5 @@
 import { FormEvent, useState } from 'react';
+import emailjs from 'emailjs-com'; // Импортируем EmailJS
 import { CardInterface } from '../../../types';
 import styles from './PopupBookingForm.module.scss';
 import { removeOverflowHiddenFromBody } from '../../utils/common';
@@ -7,26 +8,30 @@ import { arrows } from '../../assets';
 
 interface PopupBookingFormProps {
   card: CardInterface;
-  // onCarSelect: (carId: string) => void;
-  // onClose: () => void;
 }
 
 const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
   const [formData, setFormData] = useState({
-    selectedCar: card.id,
+		selectedCard: card.name,
     name: '',
     phone: '',
     date: '',
-    peopleCount: 1,
+    dateOut: '',
+    nights: '',
+    peopleCount: '',
+    children: '',
+    budget: '',
     preferences: '',
+    destination: '',
   });
+
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null); // Состояние для отображения ошибок
 
   const handleCloseModal = () => {
     removeOverflowHiddenFromBody();
     closeQickViewModal();
   };
-
-  const [submitted, setSubmitted] = useState<boolean>(false);
 
   const handleChange = (
     event: React.ChangeEvent<
@@ -38,17 +43,38 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
       ...prevData,
       [id]: id === 'peopleCount' ? Number(value) : value,
     }));
-
-    // if (id === 'selectedCar') {
-    //   onCarSelect(value);
-    // }
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Логика обработки бронирования
-    console.log(formData);
-    setSubmitted(true);
+    setError(null); // Сбрасываем ошибки перед отправкой
+
+    // Отправка данных через EmailJS
+    emailjs
+      .send(
+        'service_8php494', // ID вашего сервиса в EmailJS
+        'template_ectf2pc', // ID вашего шаблона в EmailJS
+        {
+          selectedCard: formData.selectedCard,
+          name: formData.name,
+          phone: formData.phone,
+          date: formData.date,
+          peopleCount: formData.peopleCount,
+          preferences: formData.preferences,
+        },
+        'fZ2o5KI6oXO0xXrfz' // Ваш публичный ключ (User ID)
+      )
+      .then(
+        () => {
+          setSubmitted(true); // Показываем сообщение об успешной отправке
+        },
+        (error) => {
+          console.error('Ошибка отправки формы:', error);
+          setError(
+            'Произошла ошибка при отправке заявки. Попробуйте еще раз позже.'
+          );
+        }
+      );
   };
 
   return (
@@ -58,7 +84,6 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
       </button>
       {!submitted ? (
         <form className={styles.bookingForm} onSubmit={handleSubmit}>
-        
           <label htmlFor="name">Имя:</label>
           <input
             id="name"
@@ -67,7 +92,6 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
             onChange={handleChange}
             required
           />
-
           <label htmlFor="phone">Телефон:</label>
           <input
             id="phone"
@@ -76,7 +100,6 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
             onChange={handleChange}
             required
           />
-
           <label htmlFor="date">Дата мероприятия:</label>
           <input
             id="date"
@@ -85,7 +108,6 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
             onChange={handleChange}
             required
           />
-
           <label htmlFor="peopleCount">Количество человек:</label>
           <input
             id="peopleCount"
@@ -95,21 +117,19 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
             onChange={handleChange}
             required
           />
-
           <div className={styles.formGroupText}>
-            <label htmlFor="preferences">
-              Ваши пожелания по отдыху
-            </label>
+            <label htmlFor="preferences">Ваши пожелания по отдыху</label>
             <textarea
               id="preferences"
               value={formData.preferences}
               onChange={handleChange}
             />
           </div>
-
           <div className={styles.formActions}>
             <button type="submit">Забронировать</button>
           </div>
+          {error && <p className={styles.errorMessage}>{error}</p>}{' '}
+          {/* Отображение ошибки */}
         </form>
       ) : (
         <div className={styles.confirmationMessage}>

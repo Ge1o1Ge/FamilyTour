@@ -1,5 +1,5 @@
-// components/modules/HotelBookingForm.tsx
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import styles from './HotelBookingForm.module.scss';
 import { hotelsCardsInfo } from '../../constants';
 
@@ -9,11 +9,13 @@ interface HotelBookingFormProps {
 
 const HotelBookingForm: React.FC<HotelBookingFormProps> = ({ onDestinationSelect }) => {
   const [formData, setFormData] = useState({
+    selectedCard: '',
     name: '',
     phone: '',
-    checkInDate: '',
+    date: '',
+    dateOut: '',
     nights: '',
-    guests: '',
+    peopleCount: '',
     children: '',
     budget: '',
     preferences: '',
@@ -35,15 +37,33 @@ const HotelBookingForm: React.FC<HotelBookingFormProps> = ({ onDestinationSelect
     setFormData({
       ...formData,
       destination: value,
+      selectedCard: value, // Сохраняем destination как selectedCard
     });
     onDestinationSelect(value);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Логика обработки формы
-    console.log(formData);
-    setSubmitted(true);
+
+    // Логика отправки данных через EmailJS
+    emailjs
+      .send(
+        'service_8php494', // Замените на свой service ID
+        'template_ectf2pc', // Замените на свой template ID
+        {
+          ...formData, // Передаем все данные формы
+          selectedCard: `отеля по направлению - ${hotelsCardsInfo.find((el) => el.id.toString() == formData.destination)?.name || ''}`, // Получаем название выбранного отеля по ID
+        },
+        'fZ2o5KI6oXO0xXrfz' // Замените на свой public API key
+      )
+      .then((result) => {
+        console.log('Email sent successfully', result.text);
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error.text);
+        alert('Произошла ошибка при отправке формы. Попробуйте позже.');
+      });
   };
 
   return (
@@ -61,6 +81,7 @@ const HotelBookingForm: React.FC<HotelBookingFormProps> = ({ onDestinationSelect
               onChange={handleDestinationChange}
               required
             >
+              <option value="">Выберите город</option>
               {hotelsCardsInfo.map((hotel) => (
                 <option key={hotel.id} value={hotel.id}>
                   {hotel.name}
@@ -94,12 +115,12 @@ const HotelBookingForm: React.FC<HotelBookingFormProps> = ({ onDestinationSelect
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="checkInDate">Даты заезда</label>
+            <label htmlFor="date">Даты заезда</label>
             <input
               type="date"
-              id="checkInDate"
-              name="checkInDate"
-              value={formData.checkInDate}
+              id="date"
+              name="date"
+              value={formData.date}
               onChange={handleChange}
               required
             />
@@ -118,12 +139,12 @@ const HotelBookingForm: React.FC<HotelBookingFormProps> = ({ onDestinationSelect
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="guests">Количество людей</label>
+            <label htmlFor="peopleCount">Количество людей</label>
             <input
               type="number"
-              id="guests"
-              name="guests"
-              value={formData.guests}
+              id="peopleCount"
+              name="peopleCount"
+              value={formData.peopleCount}
               onChange={handleChange}
               required
             />
