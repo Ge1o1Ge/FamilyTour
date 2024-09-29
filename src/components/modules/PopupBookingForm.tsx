@@ -5,6 +5,7 @@ import styles from './PopupBookingForm.module.scss';
 import { removeOverflowHiddenFromBody } from '../../utils/common';
 import { closeQickViewModal } from '../../context/modals';
 import { arrows } from '../../assets';
+import { formatDate } from '../lib';
 
 interface PopupBookingFormProps {
   card: CardInterface;
@@ -48,6 +49,9 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError(null); // Сбрасываем ошибки перед отправкой
+
+		formData.date = formatDate(formData.date)
+		formData.dateOut = formatDate(formData.dateOut)
 
     // Отправка данных через EmailJS
     emailjs

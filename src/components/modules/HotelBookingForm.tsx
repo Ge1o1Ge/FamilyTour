@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import styles from './HotelBookingForm.module.scss';
 import { hotelsCardsInfo } from '../../constants';
+import { formatDate } from '../lib';
 
 interface HotelBookingFormProps {
   onDestinationSelect: (destinationId: string) => void;
@@ -45,6 +46,8 @@ const HotelBookingForm: React.FC<HotelBookingFormProps> = ({ onDestinationSelect
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+		formData.date = formatDate(formData.date)
+		formData.dateOut = formatDate(formData.dateOut)
     // Логика отправки данных через EmailJS
     emailjs
       .send(
