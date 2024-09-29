@@ -13,7 +13,7 @@ interface PopupBookingFormProps {
 
 const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
   const [formData, setFormData] = useState({
-		selectedCard: card.name,
+    selectedCard: card.name,
     name: '',
     phone: '',
     date: '',
@@ -50,8 +50,8 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
     event.preventDefault();
     setError(null); // Сбрасываем ошибки перед отправкой
 
-		formData.date = formatDate(formData.date)
-		formData.dateOut = formatDate(formData.dateOut)
+    formData.date = formatDate(formData.date);
+    formData.dateOut = formatDate(formData.dateOut);
 
     // Отправка данных через EmailJS
     emailjs
@@ -87,7 +87,16 @@ const PopupBookingForm: React.FC<PopupBookingFormProps> = ({ card }) => {
         <img src={arrows.close} alt="закрыть" />
       </button>
       {!submitted ? (
-        <form className={styles.bookingForm} onSubmit={handleSubmit}>
+        <form
+          className={styles.bookingForm}
+          onSubmit={handleSubmit}
+          netlify-honeypot="bot-field"
+        >
+          <p className="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
           <label htmlFor="name">Имя:</label>
           <input
             id="name"
