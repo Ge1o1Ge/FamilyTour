@@ -62,7 +62,7 @@ export const socialLinks = [
   },
   {
     name: 'wa',
-    link: '#',
+    link: 'https://vk.com/away.php?to=https%3A%2F%2Fapi.whatsapp.com%2Fsend%3Fphone%3D79896321931&utf=1',
     description: 'Ссылка для связи WhatsApp',
     src: waIcon,
   },
